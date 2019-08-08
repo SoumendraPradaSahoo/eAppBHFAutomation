@@ -9,6 +9,9 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.CellValue;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -159,7 +162,14 @@ public class ReadTestData {
 			
 				testData.put("Data", String.valueOf(currentRow.getCell(testcaseno).getBooleanCellValue()));
             break;
+			case FORMULA :
+				FormulaEvaluator evaluator = workbook.getCreationHelper().createFormulaEvaluator();
+				CellValue cellValue = evaluator.evaluate(currentRow.getCell(testcaseno)); 
+				//System.out.println(cellValue.getStringValue());
+				testData.put("Data", getStringValueFromExcel(cellValue));
+            break;
 			default:
+				System.out.println(currentRow.getCell(testcaseno).getCellTypeEnum());
 				break;
 			
 			}
@@ -180,5 +190,23 @@ public class ReadTestData {
 			Log.error(e.toString());
 			return null;
 		}
+	}
+	
+	public static String getStringValueFromExcel(CellValue cellValue) {
+		String tempString="";
+		switch (cellValue.getCellTypeEnum()) {
+		case NUMERIC:
+			tempString= String.valueOf(cellValue.getNumberValue());
+		break;
+		case STRING:
+			tempString= cellValue.getStringValue();
+		break;
+		case BOOLEAN :
+			tempString= String.valueOf(cellValue.getBooleanValue());
+        break;
+		default:
+			break;
+		}
+		return tempString;		
 	}
 }
