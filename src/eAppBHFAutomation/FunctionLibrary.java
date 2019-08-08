@@ -13,6 +13,8 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -28,7 +30,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FunctionLibrary {
@@ -73,9 +77,11 @@ public class FunctionLibrary {
 			Thread.sleep(3000);  // Let the user actually see something!
 			Set<String> windowHandles = driver.getWindowHandles();
 			if (windowHandles.size()>1) {
-			for(String winHandle : windowHandles){
+				System.out.println("-----Open Windows Titles-----");
+				for(String winHandle : windowHandles){
 				//System.out.println(winHandle);
 				driver.switchTo().window(winHandle);
+				System.out.println(driver.getTitle());
 			}}
 			else {
 				new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(By.id("launchBtn")));
@@ -144,8 +150,7 @@ public class FunctionLibrary {
 		if (i>2)
 			driver.close();	
 		driver.switchTo().window(currHandle[1]);
-		
-		 WebElement cancelBtn = null;
+		/*WebElement cancelBtn = null;
 		try{
 			System.out.println("In Try block in Fresh Case");
            //cancelBtn = driver.findElement(By.xpath("//input[@type='button' and @value='Cancel']")); 
@@ -165,7 +170,7 @@ public class FunctionLibrary {
     			AutomationDriver.login();
     			
         	}	
-        }
+        }*/
 	}
 
 	public static void executeStep(HashMap<String, String> testData, int currentRow, int columnNo, String identifier_fileName, boolean freshCase) throws IOException 
@@ -235,6 +240,9 @@ public class FunctionLibrary {
 			break;
 		case "VERIFYVISIBLE":
 		verifyVisible(data);
+		break;
+		case "VERIFYPOLICYSTATUS":
+		verifyPolicyStatus(data);
 		break;
 		default:
 			break;
@@ -651,6 +659,67 @@ public class FunctionLibrary {
 			Log.error(e.toString());
 			Report.PutFail("Error in visiblity verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
 		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	public static void verifyPolicyStatus(String value) throws IOException
+	{
+		String[] temp;
+		if (value.contains(",")){
+			temp=value.split(",");
+			String polNumber = temp[0].trim();
+			String polStaTUS = temp[1].trim();
+			
+			try{
+				WebElement wbElement;
+				variableLocator = polNumber;
+				by = getByClass(identifiers.get("Identifier"), identifiers.get("Locator"));
+				
+				Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+							.withTimeout(16, TimeUnit.MINUTES)
+							.pollingEvery(10, TimeUnit.SECONDS)
+							.ignoring(NoSuchElementException.class);
+							
+				//wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				wbElement = wait.until(new Function<WebDriver, WebElement>(){
+					 public WebElement apply(WebDriver driver) {
+						WebElement tempWbElement = driver.findElement(by);
+						String actualStatus;
+						actualStatus = tempWbElement.getText();
+						if(polStaTUS.equalsIgnoreCase(actualStatus)) {
+							return tempWbElement;}	
+						else 
+						return null;}
+						
+				});
+				String actualStatus;
+				actualStatus = wbElement.getText();
+				if(polStaTUS.equalsIgnoreCase(actualStatus)) {
+						Report.PutPass("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
+								ScreenName + "'. Expected: " + polStaTUS + ";" + " Actual: " + actualStatus);
+						}
+					else 
+					{
+						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
+							ScreenName + "'. Expected: " + polStaTUS + ";" + " Actual: " + actualStatus);
+					}	
+		
+			}
+			catch(Exception e)
+			{
+				error_count++;
+				Log.error("Error in verifyPolicyStatus in FunctionLibrary class");
+				e.printStackTrace();
+				Log.error(e.toString());
+				Report.PutFail("Error in PolicyStatus verification for field "+ polNumber + " in screen '" + ScreenName + "'");
+			}
+			
+		}
+		else
+		{
+			Report.PutFail("Test data error for verifyPolicyStatus at " + FieldName + "' in screen '" + ScreenName + "Expected data in format (policynumber, status) but got " + value);
+		}
+		
 	}
 
 
