@@ -31,7 +31,13 @@ public class ReadPageManager {
 	
 	FileInputStream excelFile = new FileInputStream(new File(fileName));
 	XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
+	excelFile.close();
 	XSSFSheet TestCase_Sheet = workbook.getSheet(sheetname);
+	if (TestCase_Sheet==null){
+		Log.info("Invalid Screen Name Provided. The sheet with name '" + sheetname + "' doesn't exist");
+		workbook.close();
+		return locators;
+	}
 	int rowCount = 0;
 	Row currentRow;
 	Cell currentCell;
@@ -68,7 +74,6 @@ public class ReadPageManager {
 			locators.put("Client_Side_Message_Identifier", Client_Side_Message_Identifier);
 			locators.put("Client_Side_Message_Locator", Client_Side_Message_Locator);
 			workbook.close();
-			excelFile.close();
 			Log.info("Locator for " + rowName + " in page " + sheetname);
 			Log.info(locators);
 			return locators;
@@ -77,7 +82,6 @@ public class ReadPageManager {
 		iterator.next();
 	}
 	workbook.close();
-	excelFile.close();
 	return locators;
 	}
 catch (Exception e){

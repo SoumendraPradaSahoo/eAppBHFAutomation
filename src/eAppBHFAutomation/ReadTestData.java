@@ -7,9 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CellValue;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
@@ -142,13 +140,16 @@ public class ReadTestData {
 		workbook.close();
 		excelFile.close();
 		Row currentRow = TestCase_Sheet.getRow(RowNo);
-		
+
 		testData.put("ScreenName", currentRow.getCell(0).getStringCellValue());
-		testData.put("FieldName", currentRow.getCell(1).getStringCellValue());
+		if (currentRow.getCell(1) != null){	
+			testData.put("FieldName", currentRow.getCell(1).getStringCellValue());
+		}else
+			testData.put("FieldName","");
 		testData.put("Step", currentRow.getCell(2).getStringCellValue());
 		testData.put("Data", "");
 		try{
-		if (currentRow.getCell(testcaseno) != null){
+			if (currentRow.getCell(testcaseno) != null){
 			switch (currentRow.getCell(testcaseno).getCellTypeEnum()) {
 			case NUMERIC:
 				
@@ -169,18 +170,17 @@ public class ReadTestData {
 				testData.put("Data", getStringValueFromExcel(cellValue));
             break;
 			default:
-				System.out.println(currentRow.getCell(testcaseno).getCellTypeEnum());
+				//System.out.println(currentRow.getCell(testcaseno).getCellTypeEnum());
 				break;
 			
 			}
 		}}
 		catch (Exception e) {
-			Log.error("Error in getting test data. DataType other than Numeric, String, Boolean");
+			Log.error("Error in getting test data. DataType other than Numeric, String, Boolean, Formula");
 			e.printStackTrace();
 			Log.error(e.toString());
 		}
 		Log.info("Test Case Data");
-	
 		Log.info(testData);
 		return testData;
 		}
