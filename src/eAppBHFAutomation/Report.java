@@ -61,5 +61,8 @@ public class Report {
 	public static void PutFail(String message) throws IOException {
 		test.log(Status.FAIL, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());		
 	}
+	public static void PutFailWithoutScreenShot(String message) throws IOException {
+		test.log(Status.FAIL, message);		
+	}
 		
 }
