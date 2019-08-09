@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
@@ -74,9 +75,10 @@ public class FunctionLibrary {
 			driver.get(url);
 			driver.manage().window().maximize();
 			System.out.println("Launch Console Page Title: " + driver.getTitle());
-			Thread.sleep(3000);  // Let the user actually see something!
+			Thread.sleep(2000);  // Let the user actually see something!
 			Set<String> windowHandles = driver.getWindowHandles();
 			if (windowHandles.size()>1) {
+				Log.info("Login Page is opened automatically. Changing drive to Login Console");
 				System.out.println("-----Open Windows Titles-----");
 				for(String winHandle : windowHandles){
 				//System.out.println(winHandle);
@@ -84,10 +86,10 @@ public class FunctionLibrary {
 				System.out.println(driver.getTitle());
 			}}
 			else {
+				Log.info("Login Page is not opened automatically. Clicking lauch button in Launch Console to open Login Page.");
 				new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(By.id("launchBtn")));
 				driver.findElement(By.id("launchBtn")).click();
 				for(String winHandle : windowHandles){
-					//System.out.println(winHandle);
 					driver.switchTo().window(winHandle);
 				}
 			}
@@ -186,7 +188,13 @@ public class FunctionLibrary {
 		variableLocator = data;
 		
 		try {
-			identifiers = ReadPageManager.getLocators(identifier_fileName, ScreenName, FieldName);
+			if (ScreenName.equals("") || FieldName.equals("")) {
+				Report.PutFailWithoutScreenShot("Screen Name or Field name not provided for " + TestCaseID + " Step No. " + TestStepNo);
+				Log.info("Screen Name or Field name not provided for " + TestCaseID + " Step No. " + TestStepNo);	
+				return;
+			}
+			else {
+			identifiers = ReadPageManager.getLocators(identifier_fileName, ScreenName, FieldName);}
 		}catch (Exception e)
 		{
 			Log.error("Error in getting identifier in executeStep in FunctionLibrary class");
@@ -244,7 +252,21 @@ public class FunctionLibrary {
 		case "VERIFYPOLICYSTATUS":
 		verifyPolicyStatus(data);
 		break;
+		case "OPENPOLICYBYNAME":
+			if (ScreenName.equalsIgnoreCase("IN PROGRESS")){
+				openPolicy("IN PROGRESS","name",data);}
+			if (ScreenName.equalsIgnoreCase("SUBMITTED")){
+				openPolicy("SUBMITTED","name",data);}	
+			break;
+		case "OPENPOLICYBYPOLICYNO":
+			if (ScreenName.equalsIgnoreCase("IN PROGRESS")){
+				openPolicy("IN PROGRESS","policy",data);}
+			if (ScreenName.equalsIgnoreCase("SUBMITTED")){
+				openPolicy("SUBMITTED","policy",data);}
+			break; 
 		default:
+			Report.PutFail("Undefined action item  found: '" + step + "' for test case: " + TestCaseID + " and StepNo: " + TestStepNo);
+			Log.info("Undefined action item  found: '" + step + "' for test case: " + TestCaseID + " and StepNo: " + TestStepNo);
 			break;
 		}
 
@@ -661,6 +683,7 @@ public class FunctionLibrary {
 		}
 	}
 	
+	//Verify policy Status. value should be in format (PolicyNumber, Status)
 	@SuppressWarnings("deprecation")
 	public static void verifyPolicyStatus(String value) throws IOException
 	{
@@ -668,50 +691,63 @@ public class FunctionLibrary {
 		if (value.contains(",")){
 			temp=value.split(",");
 			String polNumber = temp[0].trim();
-			String polStaTUS = temp[1].trim();
+			String polStatus = temp[1].trim();
 			
 			try{
 				WebElement wbElement;
 				variableLocator = polNumber;
 				by = getByClass(identifiers.get("Identifier"), identifiers.get("Locator"));
 				
+				//WebElement tempWbElement = driver.findElement(by);
+				if (driver.findElements(by).size()==0 || polNumber.equals("")){
+						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
+								ScreenName + "'. Failed to find the Policy Number");
+				}
+				else {
 				Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-							.withTimeout(16, TimeUnit.MINUTES)
+							.withTimeout(15, TimeUnit.MINUTES)
 							.pollingEvery(10, TimeUnit.SECONDS)
 							.ignoring(NoSuchElementException.class);
 							
 				//wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
 				wbElement = wait.until(new Function<WebDriver, WebElement>(){
 					 public WebElement apply(WebDriver driver) {
+						WebElement refreshBtn =  driver.findElement(By.xpath("//table/tbody/tr/td[@title='Reload Grid']/div[text()='Refresh']"));
+						refreshBtn.click();
+						waitForAjax();
+						Log.info("Waiting for Status to be changed to " + polStatus);
+						//System.out.println("Waiting for Status to be changed to " + polStatus);
 						WebElement tempWbElement = driver.findElement(by);
 						String actualStatus;
 						actualStatus = tempWbElement.getText();
-						if(polStaTUS.equalsIgnoreCase(actualStatus)) {
+						if(polStatus.equalsIgnoreCase(actualStatus) || (!("Acknowledged".equalsIgnoreCase(polStatus)) && !("Failed".equalsIgnoreCase(polStatus)))) {
 							return tempWbElement;}	
 						else 
 						return null;}
 						
 				});
 				String actualStatus;
+				wbElement = driver.findElement(by);
+				scrollIntoWebElementMethod(driver,wbElement);
+				highLighterMethod(driver,wbElement);
 				actualStatus = wbElement.getText();
-				if(polStaTUS.equalsIgnoreCase(actualStatus)) {
+				if(polStatus.equalsIgnoreCase(actualStatus)) {
 						Report.PutPass("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
-								ScreenName + "'. Expected: " + polStaTUS + ";" + " Actual: " + actualStatus);
+								ScreenName + "'. Expected: " + polStatus + ";" + " Actual: " + actualStatus);
 						}
 					else 
 					{
 						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
-							ScreenName + "'. Expected: " + polStaTUS + ";" + " Actual: " + actualStatus);
+							ScreenName + "'. Expected: " + polStatus + ";" + " Actual: " + actualStatus);
 					}	
-		
-			}
+			}}
 			catch(Exception e)
 			{
 				error_count++;
 				Log.error("Error in verifyPolicyStatus in FunctionLibrary class");
 				e.printStackTrace();
 				Log.error(e.toString());
-				Report.PutFail("Error in PolicyStatus verification for field "+ polNumber + " in screen '" + ScreenName + "'");
+				Report.PutFail("Error in PolicyStatus verification for Policy: "+ polNumber + " in screen '" + ScreenName + "'");
 			}
 			
 		}
@@ -721,8 +757,82 @@ public class FunctionLibrary {
 		}
 		
 	}
+	
+	//Highlight a webElement
+	public static void highLighterMethod(WebDriver driver, WebElement element){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+	}
+	
+	//Scroll to a webElement
+	public static void scrollIntoWebElementMethod(WebDriver driver, WebElement element){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
+	}
+	
+	//Open application by Name/Policy Number. Works for both In-Progress and Submitted Index
+	public static void openPolicy(String screenName,String byNameorPolicy, String data) throws IOException {
+		List<WebElement> nameLink = new LinkedList<WebElement>();
+		if (screenName.equals("IN PROGRESS")){
+			//Finding element by Name where, click operations will be performed
+			if (byNameorPolicy.equals("name")){
+				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='list2_clientName']/a[text()='" + data + "']"));	
+			}
+			//Finding element by policy No. Name needs to be found where, click operations will be performed
+			if (byNameorPolicy.equals("policy")){
+				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='list2_policyNumber' and text()=' " + data + 
+						"']/preceding-sibling::td[@aria-describedby='list2_clientName']/a"));
+			}
 
+		}
+		else if (screenName.equals("SUBMITTED")){
+			if (byNameorPolicy.equals("name")){
+				//This needs to be changed. BHF doesn't have a link in client name in Submitted Index.
+				//For Ameritas need to change the xpath to 
+				////td[@aria-describedby='submittedIndexGrid_clientName' and text()='Sahoo II, Soumendra']/a
+				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='submittedIndexGrid_clientName' and text()='" + data + "']"));
+			}
+			if (byNameorPolicy.equals("policy")){
+				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='" + 
+						data + "']/preceding-sibling::td[@aria-describedby='submittedIndexGrid_clientName']"));
+			}
+		}else
+		{
+			Report.PutFailWithoutScreenShot("Invalid Page provided to Open Policy. Policy can be opened in Submitted or In Progress View. "
+					+ "Screen Name Provided: " + screenName);
+			Log.info("Data error in test case: " + TestCaseID + ", Step: " + TestStepNo);
+			Log.info("Invalid Page provided to Open Policy. Policy can be opened in Submitted or In Progress View. "
+					+ "Screen Name Provided: " + screenName);
+			return;
 
+		}
+		if (nameLink.size()==0) {
+			Report.PutFail("Not able to find policy with provided " + byNameorPolicy + " in " + screenName + " Index. Data provided: " + data);
+		}
+		else
+		{	//Multiple elements can be found if searching by Name. hence we will open only 1st element.
+			Set<String> no_of_windows_old = driver.getWindowHandles();
+			if (nameLink.get(0).isEnabled()) {
+				nameLink.get(0).click();
+				waitForAjax();
+				Set<String> no_of_windows_new = driver.getWindowHandles();
+				if(no_of_windows_new.size() != no_of_windows_old.size()) {
+					for(String winHandle : driver.getWindowHandles()){
+						System.out.println(winHandle);
+						driver.switchTo().window(winHandle);
+					}
+				}else
+				{
+					Report.PutFail("Error in opening the policy with provided " + byNameorPolicy + " in " + screenName + " Index. Data provided: " + data +
+							". The link is not enable.");	
+				}
+			}
+		}
+
+	}
+	
+	
+	//Setting ByClass
 	public static By getByClass(String identifier, String locator){
 
 		By temp = null;
