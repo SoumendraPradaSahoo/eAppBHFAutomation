@@ -20,6 +20,7 @@ public class AutomationDriver {
 	private static String browser_type; //Chrome or IE
 	private static int no_failed_steps_skip_case; //2; Case execution will terminate if no of steps are failed > given no.
 	static int ColumnNo;
+	static boolean loginSuccessfull;
 	static HashMap<String, String> testData = new LinkedHashMap<String, String>();
 
 	public static void main(String[] args) throws IOException{
@@ -29,7 +30,7 @@ public class AutomationDriver {
 			p=ReadConfigFile.getObjectRepository();
 		} catch (IOException e) {
 			Log.error("Error in reading property file: " + e.toString());
-			e.printStackTrace();
+			Log.error(e);
 			return;
 		}
 		FILE_NAME = System.getProperty("user.dir")+"\\"+ p.getProperty("TestData_Filename");
@@ -48,6 +49,9 @@ public class AutomationDriver {
 		//Login to application
 		login();
 		
+		if (!loginSuccessfull){
+			return;
+		}
 
 		int total_TestCases = 0;
 		//Get no of test cases to be executed
@@ -55,8 +59,7 @@ public class AutomationDriver {
 			total_TestCases = ReadTestData.getTestCases(FILE_NAME);
 		} catch (IOException e) {
 			Log.error("Error in calling ReadTestData.getTestCases in AutomationDriver class");
-			e.printStackTrace();
-			Log.error(e.getMessage());
+			Log.error(e);
 			return;
 		}
 
@@ -68,8 +71,7 @@ public class AutomationDriver {
 		catch (Exception e)
 		{
 			Log.error("Error in calling ReadTestData.getTotalNoOfRows in AutomationDriver class");
-			e.printStackTrace();
-			Log.error(e.getMessage());
+			Log.error(e);
 			return;
 		}
 
@@ -100,7 +102,7 @@ public class AutomationDriver {
 				testcasecolumnno = ReadTestData.getTestCaseColumnNo(FILE_NAME, testCaseId);
 				if (testcasecolumnno > 0) {
 					Report.CreateTest(testCaseId);
-					System.out.println("Starting Test Case " + testCaseId );
+					//System.out.println("Starting Test Case " + testCaseId );
 					Log.info("Starting Test Case " + testCaseId);
 					int startRowOfTestCase = 2;
 					Boolean continuestep = false;
@@ -118,7 +120,7 @@ public class AutomationDriver {
 							continuestep = false;
 						if (error_count_current_case>no_failed_steps_skip_case) {
 							continuestep = false;
-							System.out.println("Terminating execution for Test Case " + testCaseId + " as error count exceed given count");
+							//System.out.println("Terminating execution for Test Case " + testCaseId + " as error count exceed given count");
 							Log.info("Terminating execution for Test Case " + testCaseId + " as error count exceed given count");
 						}
 						if (!(data.equalsIgnoreCase("SKIP")) && continuestep)
@@ -129,11 +131,11 @@ public class AutomationDriver {
 						}
 						startRowOfTestCase++;
 					} while ((continuestep) && (startRowOfTestCase <= totalnoofrows) );
-					System.out.println("Execution Completed for Test Case " + testCaseId );
+					//System.out.println("Execution Completed for Test Case " + testCaseId );
 					Log.info("Execution Completed for Test Case " + testCaseId);
 				}
 				else {
-					System.out.println("Could not execute Test Case " + testCaseId + ". Test Data not found.");
+					//System.out.println("Could not execute Test Case " + testCaseId + ". Test Data not found.");
 					Log.info("Could not execute Test Case " + testCaseId + ". Test Data not found.");
 				}
 			}
@@ -145,13 +147,13 @@ public class AutomationDriver {
 
 		//logout of application
 		try{
-			Log.info("Porfiming Logout");
+			Log.info("Performing Logout");
 			FunctionLibrary.logout();
 			Log.info("Logout Successfull");
 		}
 		catch (Exception e){
-			e.printStackTrace();
 			Log.error("Logout Unsuccessfull " + e.getMessage());
+			Log.error(e);
 			return;}
 	}
 	
@@ -161,11 +163,11 @@ public class AutomationDriver {
 				Log.info("Initializing Browser for Automation");
 				FunctionLibrary.login(browser_type, Driver_Path, eApp_URL, agent_ID, agent_PWD, TimeOutSeconds);
 				Log.info("Browser Initialization Successfull");
+				loginSuccessfull=true;
 			} catch (Exception e) {
-				Log.error("Error in calling FunctionLibrary.login in AutomationDriver class");
-				e.printStackTrace();
-				Log.error(e.getMessage());
-				return;
+				Log.error("Error in calling FunctionLibrary.login in AutomationDriver class. " + e.getMessage() );
+				Log.error(e);
+				loginSuccessfull=false;
 			}		//Login ends
 	}
 }
