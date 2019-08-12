@@ -86,8 +86,7 @@ public class ReadPageManager {
 	}
 catch (Exception e){
 	Log.error("Error in ReadPageManager Class");
-	e.printStackTrace();
-	Log.error(e.toString());
+	Log.error(e);
 	return null;	
 }
 }

@@ -51,8 +51,7 @@ public class WriteTestData {
 		}
 		catch (Exception e){
 			Log.error("Error in setTestData in WriteTestData class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 		}
 	}
 }

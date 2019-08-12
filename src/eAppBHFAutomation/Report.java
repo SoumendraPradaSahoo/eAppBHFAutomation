@@ -11,6 +11,8 @@ import com.aventstack.extentreports.Status;
 //import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import bhfUtility.Log;
+
 public class Report {
 	static ExtentHtmlReporter report;
 	static ExtentReports logger;
@@ -47,7 +49,8 @@ public class Report {
 	
 	public static void BuildReport() {
 	logger.flush();
-	System.out.println("Report publishing completed");
+	//System.out.println("Report publishing completed");
+	Log.info("Report publishing completed");
 	}
 	
 	public static void PutInfo(String message) {
