@@ -56,7 +56,8 @@ public class FunctionLibrary {
 	public static void login(String browser_type, String driver_path,String url, String uname, String pwd, int timeout)
 	{  
 		TimeOutSeconds = timeout;
-		System.out.println("Starting Automation");  
+		//System.out.println("Starting Automation");  
+		Log.info("Starting Automation" );
 		if (browser_type.equalsIgnoreCase("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", driver_path + "/chromedriver.exe");
@@ -67,23 +68,33 @@ public class FunctionLibrary {
 			System.setProperty("webdriver.ie.driver", driver_path + "/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
+		
 		driver.manage().timeouts().pageLoadTimeout(TimeOutSeconds,TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
 		try
 		{		
 			driver.get(url);
 			driver.manage().window().maximize();
-			System.out.println("Launch Console Page Title: " + driver.getTitle());
+			Log.info("Launch Console Page Title: " + driver.getTitle());
+			//System.out.println("Launch Console Page Title: " + driver.getTitle());
 			Thread.sleep(2000);  // Let the user actually see something!
+			//System.out.println(driver.findElement(By.xpath("//*[@id='index_box']/div[@class='logo']/div/span")).getText());
+			if ((driver.findElement(By.xpath("//*[@id='index_box']/div[@class='logo']/div/span")).getText().equals("Welcome to: Brighthouse e-App"))) {
+			Log.info("Launch Console displayed..");	
+			}
+			else {
+				throw new NoSuchElementException("Application not displayed");
+			}
+			
 			Set<String> windowHandles = driver.getWindowHandles();
 			if (windowHandles.size()>1) {
 				Log.info("Login Page is opened automatically. Changing drive to Login Console");
-				System.out.println("-----Open Windows Titles-----");
+				Log.info("-----Open Windows Titles-----");
 				for(String winHandle : windowHandles){
 				//System.out.println(winHandle);
 				driver.switchTo().window(winHandle);
-				System.out.println(driver.getTitle());
+				Log.info(driver.getTitle());
 			}}
 			else {
 				Log.info("Login Page is not opened automatically. Clicking lauch button in Launch Console to open Login Page.");
@@ -94,8 +105,8 @@ public class FunctionLibrary {
 				}
 			}
 			
-			System.out.println("Driver changed to Login Console");
-			System.out.println("Login Console Page Title: " + driver.getTitle());
+			Log.info("Driver changed to Login Console");
+			Log.info("Login Console Page Title: " + driver.getTitle());
 			waitForAjax();
 			new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
 			driver.manage().window().maximize();
@@ -104,9 +115,9 @@ public class FunctionLibrary {
 			driver.findElement(By.name("_eventId__logon")).click();
 		}
 		catch (Exception e){
-			Log.error("Error in Login");
-			e.printStackTrace();
-			Log.error(e.toString());
+			driver.close();
+			driver.quit();
+			throw new NoSuchElementException("Application not displayed");
 		}
 
 	}
@@ -115,7 +126,8 @@ public class FunctionLibrary {
 	public static void logout() {
 		String[] currHandle= new String[5];
 		int i=0;
-		System.out.println("Went to logout java");
+		//System.out.println("Went to logout java");
+		Log.info("Went to logout java");
 		for(String winHandle : driver.getWindowHandles()){
 			currHandle[i++]=winHandle;
 		}
@@ -123,7 +135,8 @@ public class FunctionLibrary {
 
 		try{
 			new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.elementToBeClickable((By.id("logout")))).click();
-			System.out.println("Logout is clicked");
+			//System.out.println("Logout is clicked");
+			Log.info("Logout is clicked");
 			//Handle Popup	
 			Alert alert = driver.switchTo().alert();
 			alert.accept();
@@ -132,8 +145,7 @@ public class FunctionLibrary {
 		}
 		catch (Exception e){
 			Log.error("Error in Logout. Forcefully closing  the browser");
-			e.printStackTrace();
-			Log.error(e.getMessage());
+			Log.error(e);
 			driver.close();
 			driver.quit();
 			
@@ -144,7 +156,8 @@ public class FunctionLibrary {
 	public static void freshCase() {
 		String[] currHandle = new String[driver.getWindowHandles().size()];
 		int i=0;
-		System.out.println("Went to FreshCase");
+		//System.out.println("Went to FreshCase");
+		Log.info("Went to FreshCase");
 		for(String winHandle : driver.getWindowHandles()){
 			currHandle[i++]=winHandle;
 		}
@@ -189,6 +202,7 @@ public class FunctionLibrary {
 		
 		try {
 			if (ScreenName.equals("") || FieldName.equals("")) {
+				error_count++;
 				Report.PutFailWithoutScreenShot("Screen Name or Field name not provided for " + TestCaseID + " Step No. " + TestStepNo);
 				Log.info("Screen Name or Field name not provided for " + TestCaseID + " Step No. " + TestStepNo);	
 				return;
@@ -198,8 +212,7 @@ public class FunctionLibrary {
 		}catch (Exception e)
 		{
 			Log.error("Error in getting identifier in executeStep in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			return;
 		}
 
@@ -209,8 +222,7 @@ public class FunctionLibrary {
 			byClientMsg = getByClass(identifiers.get("Client_Side_Message_Identifier"), identifiers.get("Client_Side_Message_Locator"));//setting by for corresponding client side message
 		}catch (Exception e){
 			Log.error("Error in getByClass in executeStep in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			return;}
 
 		switch (step.toUpperCase())
@@ -229,7 +241,7 @@ public class FunctionLibrary {
 				verifyClientMsg(data);
 			} catch (IOException e) {
 				Log.error("Error in verifyClientMsg Function in FunctionLibrary Class: " + e.toString());
-				e.printStackTrace();
+				Log.error(e);
 			}
 			break;
 		case "VERIFYSERVERMESSAGE":
@@ -237,7 +249,7 @@ public class FunctionLibrary {
 			verifyServerMsg(data);
 		} catch (IOException e) {
 			Log.error("Error in verifyServerMsg Function in FunctionLibrary Class: " + e.toString());
-			e.printStackTrace();
+			Log.error(e);
 		}
 		break;
 		case "VERIFYVALUE":
@@ -265,6 +277,7 @@ public class FunctionLibrary {
 				openPolicy("SUBMITTED","policy",data);}
 			break; 
 		default:
+			error_count++;
 			Report.PutFail("Undefined action item  found: '" + step + "' for test case: " + TestCaseID + " and StepNo: " + TestStepNo);
 			Log.info("Undefined action item  found: '" + step + "' for test case: " + TestCaseID + " and StepNo: " + TestStepNo);
 			break;
@@ -346,6 +359,7 @@ public class FunctionLibrary {
 							listMap.get(str.trim()).click();
 							}
 						}else {
+							error_count++;
 							Report.PutFail("Error in putting " + str.trim() + " in " + ScreenName + "-" + FieldName);
 						}
 					}
@@ -360,8 +374,7 @@ public class FunctionLibrary {
 		{
 			error_count++;
 			Log.error("Error in setValue for field type '" + fieldtype + "' and data '"+ data + "' in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			Report.PutFail("Error in putting " + data + " in " + ScreenName + "-" + FieldName );
 		}
 
@@ -419,8 +432,7 @@ public class FunctionLibrary {
 		{
 			error_count++;
 			Log.error("Error in getValue for field type '" + fieldtype + "' and row id (" + currentRow + "," + columnNo + ") in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			Report.PutFail("Error in reading from field '" + FieldName + "' from screen '" + ScreenName + 
 					"', Check row id (" + currentRow + "," + columnNo + ")");
 		}
@@ -436,7 +448,6 @@ public class FunctionLibrary {
 			/*new Actions(driver).moveToElement(wbElement).perform();
 			waitForAjax();*/
 			wbElement.click();
-			waitForAjax();
 			Set<String> no_of_windows_new = driver.getWindowHandles();
 			//Switch to new page if new page opens
 			if(no_of_windows_new.size() != no_of_windows_old.size()) {
@@ -444,17 +455,19 @@ public class FunctionLibrary {
 				System.out.println(winHandle);
 				driver.switchTo().window(winHandle);
 			}}
+			waitForAjax();
 		}
-			else
+			else {
+				error_count++;
 				Report.PutFail("Error in button click for field " + ScreenName + "-" + FieldName + " Button not enabled.");
+			}
 			}
 		
 		catch(Exception e)
 		{
 			error_count++;
 			Log.error("Error in clickButton in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			Report.PutFail("Error in button click for field " + ScreenName + "-" + FieldName);
 		}
 	}
@@ -463,7 +476,8 @@ public class FunctionLibrary {
 	{
 		String report_text = "";
 		String actual_message = "";
-		report_text = "Verification of client side message, Expected: " + message + " , Actual: " ;
+		report_text = "Verification of client side message for " + FieldName + 
+				" in screen " + ScreenName + ", Expected: " + message + " , Actual: " ;
 		try{
 			WebElement wbElement;
 			wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
@@ -477,6 +491,7 @@ public class FunctionLibrary {
 			}
 			else
 			{
+				error_count++;
 				Report.PutFail(report_text);
 				//System.out.println("Last Name Fail");
 			}
@@ -485,13 +500,14 @@ public class FunctionLibrary {
 		
 		catch(Exception e){
 			if (message=="")
-				Report.PutPass("Verification of client side message, Expected: No Messsage, Actual: No Message");	
+				Report.PutPass("Verification of client side message for " + FieldName + 
+						" in screen " + ScreenName + ", Expected: No Messsage, Actual: No Message");	
 			else {
 				error_count++;
 				Log.error("Error in verifyClientMsg in FunctionLibrary class " + e.toString());
 				Log.error("Error in verifying Client Side message '" + message + "'");
 				Report.PutFail("Error in verifying Client Side message for field " + ScreenName + "-" + FieldName);
-				e.printStackTrace();
+				Log.error(e);
 			}
 		}
 	}
@@ -520,11 +536,13 @@ public class FunctionLibrary {
 			}
 			else if (count > 1)
 			{
+				error_count++;
 				Report.PutFail(report_text + ". More than one message found.");
 				
 			}
 			else if(count==0)
 			{
+				error_count++;
 				Report.PutFail(report_text);
 				
 			}
@@ -533,21 +551,23 @@ public class FunctionLibrary {
 
 		catch(NoSuchElementException e){
 			if (message=="")
-				Report.PutPass("Verification of server side message, Expected: No Messsage, Actual: No Message");	
+				Report.PutPass("Verification of server side message for field '" + FieldName + "' from screen '" 
+			+ ScreenName + "'; Expected: No Messsage, Actual: No Message");	
 		}
 		catch(Exception e) {
 				error_count++;
-				Log.error("Error in verifyServerMsg in FunctionLibrary class " + e.toString());
+				Log.error("Error in verifyServerMsg in FunctionLibrary class ");
+				Log.error(e);
 				Log.error("Error in verifying Server Side message '" + message + "'");
 				Report.PutFail("Error in verifying Server Side message for field " + ScreenName + "-" + FieldName);
-				e.printStackTrace();
 		}
 	}
 	
 	public static void verifyValue(String fieldtype, String value) throws IOException
 	{
 		String report_text;
-		report_text = "Verification of field value, Expected: " + value + " , Actual: " ;
+		report_text = "Verification of field value for " + FieldName +
+				" in  Screen " + ScreenName + " , Expected: " + value + " , Actual: " ;
 		try {
 			WebElement wbElement;
 			Select temp_ddlb;
@@ -593,8 +613,7 @@ public class FunctionLibrary {
 		{
 			error_count++;
 			Log.error("Error in verifyValue in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			Report.PutFail("Error in verifying value for field '" + FieldName + "' from screen '" + ScreenName);
 		}
 	}
@@ -635,8 +654,7 @@ public class FunctionLibrary {
 		{
 			error_count++;
 			Log.error("Error in verifyEnabled in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			Report.PutFail("Error in enable/disable verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
 		}
 	}
@@ -677,8 +695,7 @@ public class FunctionLibrary {
 		{
 			error_count++;
 			Log.error("Error in verifyVisible in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			Report.PutFail("Error in visiblity verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
 		}
 	}
@@ -698,8 +715,13 @@ public class FunctionLibrary {
 				variableLocator = polNumber;
 				by = getByClass(identifiers.get("Identifier"), identifiers.get("Locator"));
 				
+				WebElement refreshBtn =  driver.findElement(By.xpath("//table/tbody/tr/td[@title='Reload Grid']/div[text()='Refresh']"));
+				refreshBtn.click();
+				waitForAjax();
+				
 				//WebElement tempWbElement = driver.findElement(by);
 				if (driver.findElements(by).size()==0 || polNumber.equals("")){
+					error_count++;
 						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
 								ScreenName + "'. Failed to find the Policy Number");
 				}
@@ -737,6 +759,7 @@ public class FunctionLibrary {
 						}
 					else 
 					{
+						error_count++;
 						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
 							ScreenName + "'. Expected: " + polStatus + ";" + " Actual: " + actualStatus);
 					}	
@@ -745,14 +768,13 @@ public class FunctionLibrary {
 			{
 				error_count++;
 				Log.error("Error in verifyPolicyStatus in FunctionLibrary class");
-				e.printStackTrace();
-				Log.error(e.toString());
+				Log.error(e);
 				Report.PutFail("Error in PolicyStatus verification for Policy: "+ polNumber + " in screen '" + ScreenName + "'");
 			}
 			
 		}
 		else
-		{
+		{	error_count++;
 			Report.PutFail("Test data error for verifyPolicyStatus at " + FieldName + "' in screen '" + ScreenName + "Expected data in format (policynumber, status) but got " + value);
 		}
 		
@@ -776,12 +798,15 @@ public class FunctionLibrary {
 		if (screenName.equals("IN PROGRESS")){
 			//Finding element by Name where, click operations will be performed
 			if (byNameorPolicy.equals("name")){
-				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='list2_clientName']/a[text()='" + data + "']"));	
+				nameLink = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+						By.xpath("//td[@aria-describedby='list2_clientName']/a[text()='" + data + "']")));	
+				//new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
 			}
 			//Finding element by policy No. Name needs to be found where, click operations will be performed
 			if (byNameorPolicy.equals("policy")){
-				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='list2_policyNumber' and text()=' " + data + 
-						"']/preceding-sibling::td[@aria-describedby='list2_clientName']/a"));
+				nameLink = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+						By.xpath("//td[@aria-describedby='list2_policyNumber' and text()=' " + data + 
+						"']/preceding-sibling::td[@aria-describedby='list2_clientName']/a")));
 			}
 
 		}
@@ -790,11 +815,13 @@ public class FunctionLibrary {
 				//This needs to be changed. BHF doesn't have a link in client name in Submitted Index.
 				//For Ameritas need to change the xpath to 
 				////td[@aria-describedby='submittedIndexGrid_clientName' and text()='Sahoo II, Soumendra']/a
-				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='submittedIndexGrid_clientName' and text()='" + data + "']"));
+				nameLink = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+						By.xpath("//td[@aria-describedby='submittedIndexGrid_clientName' and text()='" + data + "']")));
 			}
 			if (byNameorPolicy.equals("policy")){
-				nameLink = driver.findElements(By.xpath("//td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='" + 
-						data + "']/preceding-sibling::td[@aria-describedby='submittedIndexGrid_clientName']"));
+				nameLink = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+						By.xpath("//td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='" + 
+						data + "']/preceding-sibling::td[@aria-describedby='submittedIndexGrid_clientName']")));
 			}
 		}else
 		{
@@ -818,7 +845,7 @@ public class FunctionLibrary {
 				Set<String> no_of_windows_new = driver.getWindowHandles();
 				if(no_of_windows_new.size() != no_of_windows_old.size()) {
 					for(String winHandle : driver.getWindowHandles()){
-						System.out.println(winHandle);
+						//System.out.println(winHandle);
 						driver.switchTo().window(winHandle);
 					}
 				}else
@@ -890,15 +917,14 @@ public class FunctionLibrary {
 						//System.out.println("Radio option is clicked throuhg webdriver");
 						return;
 					}}
-				Report.PutFail("Not able to select the radio option as " + dataValue);
+				Report.PutFail("Not able to select the radio option as " + dataValue + " for " + FieldName + " in screen " + ScreenName);
 			}
 			catch(Exception e)
 			{
 				error_count++;
 				Log.error("Error in setRadioOptions in FunctionLibrary class");
-				e.printStackTrace();
-				Log.error(e.toString());
-				Report.PutFail("Not able to select the radio option as " + dataValue);
+				Log.error(e);
+				Report.PutFail("Not able to select the radio option as " + dataValue + " for " + FieldName + " in screen " + ScreenName);
 			}}
 	}
 
@@ -915,7 +941,8 @@ public class FunctionLibrary {
 				}
 			}
 
-			System.out.println("None of the Radio Option is selected");
+			//System.out.println("None of the Radio Option is selected");
+			Log.info("None of the Radio Option is selected. getRadioOptions Function");
 			return "";
 		}
 
@@ -923,8 +950,7 @@ public class FunctionLibrary {
 		{
 			error_count++;
 			Log.error("Error in getRadioOptions in FunctionLibrary class");
-			e.printStackTrace();
-			Log.error(e.toString());
+			Log.error(e);
 			return "";
 		}
 
@@ -957,7 +983,7 @@ public class FunctionLibrary {
 		}
 		catch(Exception e){
 			Log.error("Error in captureScreen in FunctionLibrary class: " + e.toString());
-			e.printStackTrace();
+			Log.error(e);
 			return "";
 		}
 	}
