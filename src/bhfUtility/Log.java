@@ -62,7 +62,8 @@ public class Log {
 		        sb.concat(element.toString());
 		        sb.concat("\n");
 		    }
-		    error(sb);
+		   // error(sb);
+		    log.error("Detail exception: ", e);
 		}
 
 	private static void init() {
