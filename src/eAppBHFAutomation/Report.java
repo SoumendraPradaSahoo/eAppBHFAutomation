@@ -19,7 +19,7 @@ public class Report {
 	static ExtentTest test;
 	
 	public static void InitializeReport(String filename_path) {
-		System.out.println("Initializing the report");
+		//System.out.println("Initializing the report");
 		String reportfilename = filename_path;
 			//Setting the Report File Name
 			 DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -40,12 +40,6 @@ public class Report {
 	public static void CreateTest(String testcaseno) {
 		test = logger.createTest("Test Case: "+ testcaseno);
 	}
-		//test.log(Status.INFO, "Google lunched successfully");
-		//test.log(Status.INFO, "Search Completed");
-		//test.log(Status.PASS, "Test Case is pass", MediaEntityBuilder.createScreenCaptureFromPath(captureScreen("Screenshot " + count++ + ".png")).build());
-		//test.addScreenCaptureFromPath("D:\\eApp Automation\\Quote Screen 1.png");
-		//test.log(Status.FAIL, "Test Case is Fail",MediaEntityBuilder.createScreenCaptureFromPath(captureScreen("Screenshot " + count++ + ".png")).build());
-
 	
 	public static void BuildReport() {
 	logger.flush();
@@ -62,9 +56,11 @@ public class Report {
 	}
 	
 	public static void PutFail(String message) throws IOException {
+		FunctionLibrary.error_count++;
 		test.log(Status.FAIL, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());		
 	}
 	public static void PutFailWithoutScreenShot(String message) throws IOException {
+		FunctionLibrary.error_count++;
 		test.log(Status.FAIL, message);		
 	}
 		

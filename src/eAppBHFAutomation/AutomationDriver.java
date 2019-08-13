@@ -1,10 +1,14 @@
 package eAppBHFAutomation;
 
 import bhfUtility.Log;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Properties;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AutomationDriver {
 	static int testCaseNo;
@@ -22,8 +26,13 @@ public class AutomationDriver {
 	static int ColumnNo;
 	static boolean loginSuccessfull;
 	static HashMap<String, String> testData = new LinkedHashMap<String, String>();
+	static HashMap<String, LinkedHashMap<String, String>> allLocators = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 
 	public static void main(String[] args) throws IOException{
+		Log.info("------------------------------------------------------------------");
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		Date date = new Date();  
+		Log.info("Starting Automation: " + formatter.format(date) );
 		//Read Property File
 		Properties p = new Properties();
 		try {
@@ -46,9 +55,32 @@ public class AutomationDriver {
 		no_failed_steps_skip_case = Integer.parseInt(p.getProperty("no_failed_steps_to_skip_case"));
 		//Property File Reading Ends
 
+		//Checking Test Data File is already open or not. If not terminate the execution.
+		File file = new File(FILE_NAME);
+	    File sameFileName = new File(FILE_NAME);// try to rename the file with the same name
+	    if(file.renameTo(sameFileName)){// if the file is renamed
+	        Log.info("Test Data File is closed: " + FILE_NAME + ". Proceeding with execution.");
+	    }else{// if the file didnt accept the renaming operation
+	    	Log.info("Test Data File is closed: " + FILE_NAME + ". Terminating execution.");
+	    	return;
+	    }//Test Data file checking ends
+		
+	    //Populating all Locators for all pages
+	    Log.info("Reading Page manager and populating 'allLocators' map");
+	    allLocators = ReadPageManager.getAllLocators(FieldIdentifier_Loc);
+	    Log.info("'allLocators' map Populated with all values from Page Identifier Excel");
+	    if (allLocators==null) {
+	    	Log.error("Got some exception in reading the page identiofiers. Terminating execution.");
+	    	return;
+	    }
+	   
+	    //Terminating the code in middle
+	   /*if (true){
+		 return;  
+	   }*/
+	    
 		//Login to application
 		login();
-		
 		if (!loginSuccessfull){
 			return;
 		}

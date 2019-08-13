@@ -56,8 +56,6 @@ public class FunctionLibrary {
 	public static void login(String browser_type, String driver_path,String url, String uname, String pwd, int timeout)
 	{  
 		TimeOutSeconds = timeout;
-		//System.out.println("Starting Automation");  
-		Log.info("Starting Automation" );
 		if (browser_type.equalsIgnoreCase("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", driver_path + "/chromedriver.exe");
@@ -202,16 +200,29 @@ public class FunctionLibrary {
 		
 		try {
 			if (ScreenName.equals("") || FieldName.equals("")) {
-				error_count++;
+				//error_count++;
 				Report.PutFailWithoutScreenShot("Screen Name or Field name not provided for " + TestCaseID + " Step No. " + TestStepNo);
 				Log.info("Screen Name or Field name not provided for " + TestCaseID + " Step No. " + TestStepNo);	
 				return;
 			}
 			else {
-			identifiers = ReadPageManager.getLocators(identifier_fileName, ScreenName, FieldName);}
+				if (AutomationDriver.allLocators.containsKey(ScreenName + "." + FieldName)) {
+			//identifiers = ReadPageManager.getLocators(identifier_fileName, ScreenName, FieldName);
+				identifiers = (AutomationDriver.allLocators).get(ScreenName + "." + FieldName);
+				Log.info("Identifier for " + FieldName + " in Page " + ScreenName);
+				Log.info(identifiers);
+				}
+				else {
+					Report.PutFailWithoutScreenShot("Not able to find identifier " + ScreenName + "." + FieldName
+				+ " for " + TestCaseID + " Step No. " + TestStepNo);
+					Log.info("Not able to find identifier " + ScreenName + "." + FieldName
+							+ " for " + TestCaseID + " Step No. " + TestStepNo);	
+					return;
+				}
+			}
 		}catch (Exception e)
 		{
-			Log.error("Error in getting identifier in executeStep in FunctionLibrary class");
+			Log.error("Error in getting identifier in executeStep in FunctionLibrary class for " + TestCaseID + " Step No. " + TestStepNo);
 			Log.error(e);
 			return;
 		}
@@ -221,7 +232,7 @@ public class FunctionLibrary {
 			by = getByClass(identifiers.get("Identifier"), identifiers.get("Locator"));//setting by for field
 			byClientMsg = getByClass(identifiers.get("Client_Side_Message_Identifier"), identifiers.get("Client_Side_Message_Locator"));//setting by for corresponding client side message
 		}catch (Exception e){
-			Log.error("Error in getByClass in executeStep in FunctionLibrary class");
+			Log.error("Error in getByClass in executeStep in FunctionLibrary class for " + TestCaseID + " Step No. " + TestStepNo);
 			Log.error(e);
 			return;}
 
@@ -277,7 +288,7 @@ public class FunctionLibrary {
 				openPolicy("SUBMITTED","policy",data);}
 			break; 
 		default:
-			error_count++;
+			//error_count++;
 			Report.PutFail("Undefined action item  found: '" + step + "' for test case: " + TestCaseID + " and StepNo: " + TestStepNo);
 			Log.info("Undefined action item  found: '" + step + "' for test case: " + TestCaseID + " and StepNo: " + TestStepNo);
 			break;
@@ -359,7 +370,7 @@ public class FunctionLibrary {
 							listMap.get(str.trim()).click();
 							}
 						}else {
-							error_count++;
+							//error_count++;
 							Report.PutFail("Error in putting " + str.trim() + " in " + ScreenName + "-" + FieldName);
 						}
 					}
@@ -372,7 +383,7 @@ public class FunctionLibrary {
 			}}
 		catch (Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in setValue for field type '" + fieldtype + "' and data '"+ data + "' in FunctionLibrary class");
 			Log.error(e);
 			Report.PutFail("Error in putting " + data + " in " + ScreenName + "-" + FieldName );
@@ -423,14 +434,16 @@ public class FunctionLibrary {
 				break;
 			}
 
-			Log.info("Writing test data '" + tempdata + "' into cell (" + currentRow + "," + columnNo + ")");
+			Log.info("Fetching test data '" + tempdata + "' from " + FieldName + " in " + ScreenName  
+			+ " into cell (" + currentRow + "," + columnNo + ")");
 			WriteTestData.setTestData(currentRow, columnNo , tempdata);
-			Report.PutInfo("Writing data '" + tempdata + "' into cell (" + currentRow + "," + columnNo + ") is successfull");
+			Report.PutInfo("Fetching test data '" + tempdata + "' from " + FieldName + " in " + ScreenName  
+					+ " into cell (" + currentRow + "," + columnNo + ") is successfull");
 		}		
 
 		catch (Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in getValue for field type '" + fieldtype + "' and row id (" + currentRow + "," + columnNo + ") in FunctionLibrary class");
 			Log.error(e);
 			Report.PutFail("Error in reading from field '" + FieldName + "' from screen '" + ScreenName + 
@@ -458,14 +471,14 @@ public class FunctionLibrary {
 			waitForAjax();
 		}
 			else {
-				error_count++;
+				//error_count++;
 				Report.PutFail("Error in button click for field " + ScreenName + "-" + FieldName + " Button not enabled.");
 			}
 			}
 		
 		catch(Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in clickButton in FunctionLibrary class");
 			Log.error(e);
 			Report.PutFail("Error in button click for field " + ScreenName + "-" + FieldName);
@@ -476,22 +489,26 @@ public class FunctionLibrary {
 	{
 		String report_text = "";
 		String actual_message = "";
+		WebElement wbElement, wbElementField = null;
 		report_text = "Verification of client side message for " + FieldName + 
 				" in screen " + ScreenName + ", Expected: " + message + " , Actual: " ;
 		try{
-			WebElement wbElement;
+			wbElementField = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
 			wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
+			
 			waitForAjax();
 			actual_message = wbElement.getText();
 			report_text = report_text + actual_message;
 
 			if (actual_message.equals(message)) {
+				scrollIntoWebElementMethod(driver, wbElementField);
 				Report.PutPass(report_text);
 				//System.out.println("Last Name Pass"); 
 			}
 			else
 			{
-				error_count++;
+				//error_count++;
+				scrollIntoWebElementMethod(driver, wbElementField);
 				Report.PutFail(report_text);
 				//System.out.println("Last Name Fail");
 			}
@@ -499,11 +516,14 @@ public class FunctionLibrary {
 		}
 		
 		catch(Exception e){
-			if (message=="")
-				Report.PutPass("Verification of client side message for " + FieldName + 
-						" in screen " + ScreenName + ", Expected: No Messsage, Actual: No Message");	
+			if (message=="") {
+				if (wbElementField != null) {
+					scrollIntoWebElementMethod(driver, wbElementField);
+					Report.PutPass("Verification of client side message for " + FieldName + 
+							" in screen " + ScreenName + ", Expected: No Messsage, Actual: No Message");		
+				}}
 			else {
-				error_count++;
+				//error_count++;
 				Log.error("Error in verifyClientMsg in FunctionLibrary class " + e.toString());
 				Log.error("Error in verifying Client Side message '" + message + "'");
 				Report.PutFail("Error in verifying Client Side message for field " + ScreenName + "-" + FieldName);
@@ -516,14 +536,14 @@ public class FunctionLibrary {
 	{
 		String report_text = "";
 		String actual_message = "";
-		System.out.println("Inside server msg verification. Expected: "+message);
+		//System.out.println("Inside server msg verification. Expected: "+ message);
 		int count=0;
 		report_text = "Verification of server side message for field '" + FieldName + "' from screen '" + ScreenName + "'. Expected: " + message + " Actual: " ;
 		try{
-			List<WebElement> actual_ser_msg = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("//div[@id='centerContent']/div[@id='eastDiv']//div[@id='Messages']/ul/li"))));
+			List<WebElement> actual_ser_msg = driver.findElements(By.xpath("//div[@id='centerContent']/div[@id='eastDiv']//div[@id='Messages']/ul/li"));
 			for(WebElement element:actual_ser_msg) {
 				actual_message=element.getText();
-				System.out.println("Inside WebElement: " + actual_message);
+				//System.out.println("Inside WebElement: " + actual_message);
 				if (message.equals(actual_message)){
 					if (count==0) {
 					report_text = report_text + actual_message;}
@@ -536,13 +556,19 @@ public class FunctionLibrary {
 			}
 			else if (count > 1)
 			{
-				error_count++;
+				//error_count++;
 				Report.PutFail(report_text + ". More than one message found.");
 				
 			}
-			else if(count==0)
+			else if((message.trim()).equals("") && actual_ser_msg.size()==0 )
 			{
-				error_count++;
+				//error_count++;
+				Report.PutPass(report_text);
+				
+			}
+			else if (count==0)
+			{
+				//error_count++;
 				Report.PutFail(report_text);
 				
 			}
@@ -555,7 +581,7 @@ public class FunctionLibrary {
 			+ ScreenName + "'; Expected: No Messsage, Actual: No Message");	
 		}
 		catch(Exception e) {
-				error_count++;
+				//error_count++;
 				Log.error("Error in verifyServerMsg in FunctionLibrary class ");
 				Log.error(e);
 				Log.error("Error in verifying Server Side message '" + message + "'");
@@ -611,7 +637,7 @@ public class FunctionLibrary {
 
 		catch (Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in verifyValue in FunctionLibrary class");
 			Log.error(e);
 			Report.PutFail("Error in verifying value for field '" + FieldName + "' from screen '" + ScreenName);
@@ -652,7 +678,7 @@ public class FunctionLibrary {
 		}
 		catch(Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in verifyEnabled in FunctionLibrary class");
 			Log.error(e);
 			Report.PutFail("Error in enable/disable verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
@@ -693,7 +719,7 @@ public class FunctionLibrary {
 		}
 		catch(Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in verifyVisible in FunctionLibrary class");
 			Log.error(e);
 			Report.PutFail("Error in visiblity verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
@@ -721,7 +747,7 @@ public class FunctionLibrary {
 				
 				//WebElement tempWbElement = driver.findElement(by);
 				if (driver.findElements(by).size()==0 || polNumber.equals("")){
-					error_count++;
+					//error_count++;
 						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
 								ScreenName + "'. Failed to find the Policy Number");
 				}
@@ -759,14 +785,14 @@ public class FunctionLibrary {
 						}
 					else 
 					{
-						error_count++;
+						//error_count++;
 						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
 							ScreenName + "'. Expected: " + polStatus + ";" + " Actual: " + actualStatus);
 					}	
 			}}
 			catch(Exception e)
 			{
-				error_count++;
+				//error_count++;
 				Log.error("Error in verifyPolicyStatus in FunctionLibrary class");
 				Log.error(e);
 				Report.PutFail("Error in PolicyStatus verification for Policy: "+ polNumber + " in screen '" + ScreenName + "'");
@@ -774,7 +800,7 @@ public class FunctionLibrary {
 			
 		}
 		else
-		{	error_count++;
+		{	//error_count++;
 			Report.PutFail("Test data error for verifyPolicyStatus at " + FieldName + "' in screen '" + ScreenName + "Expected data in format (policynumber, status) but got " + value);
 		}
 		
@@ -921,7 +947,7 @@ public class FunctionLibrary {
 			}
 			catch(Exception e)
 			{
-				error_count++;
+				//error_count++;
 				Log.error("Error in setRadioOptions in FunctionLibrary class");
 				Log.error(e);
 				Report.PutFail("Not able to select the radio option as " + dataValue + " for " + FieldName + " in screen " + ScreenName);
@@ -948,7 +974,7 @@ public class FunctionLibrary {
 
 		catch(Exception e)
 		{
-			error_count++;
+			//error_count++;
 			Log.error("Error in getRadioOptions in FunctionLibrary class");
 			Log.error(e);
 			return "";
