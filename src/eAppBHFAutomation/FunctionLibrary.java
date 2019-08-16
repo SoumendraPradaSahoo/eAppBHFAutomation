@@ -275,6 +275,9 @@ public class FunctionLibrary {
 		case "VERIFYPOLICYSTATUS":
 		verifyPolicyStatus(data);
 		break;
+		case "SELECTPLAN":
+			selectPlan(data);
+			break;
 		case "OPENPOLICYBYNAME":
 			if (ScreenName.equalsIgnoreCase("IN PROGRESS")){
 				openPolicy("IN PROGRESS","name",data);}
@@ -491,24 +494,24 @@ public class FunctionLibrary {
 		String actual_message = "";
 		WebElement wbElement, wbElementField = null;
 		report_text = "Verification of client side message for " + FieldName + 
-				" in screen " + ScreenName + ", Expected: " + message + " , Actual: " ;
+				" in screen " + ScreenName + ", Expected: '" + message + "' ; Actual: '" ;
 		try{
 			wbElementField = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
 			wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
 			
 			waitForAjax();
 			actual_message = wbElement.getText();
-			report_text = report_text + actual_message;
+			report_text = report_text + actual_message + "'";
 
 			if (actual_message.equals(message)) {
-				scrollIntoWebElementMethod(driver, wbElementField);
+				scrollIntoWebElementMethod(wbElementField);
 				Report.PutPass(report_text);
 				//System.out.println("Last Name Pass"); 
 			}
 			else
 			{
 				//error_count++;
-				scrollIntoWebElementMethod(driver, wbElementField);
+				scrollIntoWebElementMethod(wbElementField);
 				Report.PutFail(report_text);
 				//System.out.println("Last Name Fail");
 			}
@@ -518,7 +521,7 @@ public class FunctionLibrary {
 		catch(Exception e){
 			if (message=="") {
 				if (wbElementField != null) {
-					scrollIntoWebElementMethod(driver, wbElementField);
+					scrollIntoWebElementMethod(wbElementField);
 					Report.PutPass("Verification of client side message for " + FieldName + 
 							" in screen " + ScreenName + ", Expected: No Messsage, Actual: No Message");		
 				}}
@@ -536,17 +539,19 @@ public class FunctionLibrary {
 	{
 		String report_text = "";
 		String actual_message = "";
+		List<WebElement> actual_ser_msg;
 		//System.out.println("Inside server msg verification. Expected: "+ message);
 		int count=0;
-		report_text = "Verification of server side message for field '" + FieldName + "' from screen '" + ScreenName + "'. Expected: " + message + " Actual: " ;
+		report_text = "Verification of server side message for field '" + FieldName + "' from screen '" + ScreenName + "'. Expected: '" + message + "' ; Actual: '" ;
 		try{
-			List<WebElement> actual_ser_msg = driver.findElements(By.xpath("//div[@id='centerContent']/div[@id='eastDiv']//div[@id='Messages']/ul/li"));
+			actual_ser_msg = driver.findElements(By.xpath("//div[@id='centerContent']/div[@id='eastDiv']//div[@id='Messages']/ul/li"));
 			for(WebElement element:actual_ser_msg) {
 				actual_message=element.getText();
 				//System.out.println("Inside WebElement: " + actual_message);
 				if (message.equals(actual_message)){
+					scrollIntoWebElementMethod(element);
 					if (count==0) {
-					report_text = report_text + actual_message;}
+					report_text = report_text + actual_message + "'";}
 					count++;
 				}
 			}
@@ -569,7 +574,7 @@ public class FunctionLibrary {
 			else if (count==0)
 			{
 				//error_count++;
-				Report.PutFail(report_text);
+				Report.PutFail(report_text + "'. So such message found.");
 				
 			}
 
@@ -763,7 +768,7 @@ public class FunctionLibrary {
 						WebElement refreshBtn =  driver.findElement(By.xpath("//table/tbody/tr/td[@title='Reload Grid']/div[text()='Refresh']"));
 						refreshBtn.click();
 						waitForAjax();
-						Log.info("Waiting for Status to be changed to " + polStatus);
+						Log.info("Waiting for policy# " + polNumber + " Status to be changed to " + polStatus);
 						//System.out.println("Waiting for Status to be changed to " + polStatus);
 						WebElement tempWbElement = driver.findElement(by);
 						String actualStatus;
@@ -776,16 +781,18 @@ public class FunctionLibrary {
 				});
 				String actualStatus;
 				wbElement = driver.findElement(by);
-				scrollIntoWebElementMethod(driver,wbElement);
-				highLighterMethod(driver,wbElement);
+				scrollIntoWebElementMethod(wbElement);
+				highLighterMethod(wbElement);
 				actualStatus = wbElement.getText();
 				if(polStatus.equalsIgnoreCase(actualStatus)) {
+						Log.info("Policy# " + polNumber + " Final Policy Status: " + actualStatus);
 						Report.PutPass("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
 								ScreenName + "'. Expected: " + polStatus + ";" + " Actual: " + actualStatus);
 						}
 					else 
 					{
 						//error_count++;
+						Log.info("Policy# " + polNumber + " Final Policy Status: " + actualStatus);
 						Report.PutFail("Verification of PolicyStatus for '"+ polNumber + "' in screen '" + 
 							ScreenName + "'. Expected: " + polStatus + ";" + " Actual: " + actualStatus);
 					}	
@@ -807,13 +814,13 @@ public class FunctionLibrary {
 	}
 	
 	//Highlight a webElement
-	public static void highLighterMethod(WebDriver driver, WebElement element){
+	public static void highLighterMethod (WebElement element){
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
 	}
 	
 	//Scroll to a webElement
-	public static void scrollIntoWebElementMethod(WebDriver driver, WebElement element){
+	public static void scrollIntoWebElementMethod (WebElement element){
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
 	}
@@ -884,7 +891,62 @@ public class FunctionLibrary {
 
 	}
 	
-	
+	//selectPlan
+	public static void selectPlan(String planName) throws IOException
+	{
+			try{
+				WebElement refreshBtn = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(By.xpath("//table/tbody/tr/td[@title='Reload Grid']/div[text()='Refresh']")));
+				refreshBtn.click();
+				waitForAjax();
+				List<WebElement> wbElement;
+				WebElement nextNavigation, pageNo;
+				Boolean nextEnabled=false;
+				nextNavigation = driver.findElement(By.xpath("//*[@id='next_planListPager']"));
+				wbElement =  driver.findElements(by);
+				if (!nextNavigation.getAttribute("class").contains("ui-state-disabled")){
+					nextEnabled=true;
+				}
+			while(wbElement.size()==0 && nextEnabled) {
+				pageNo = driver.findElement(By.xpath("//*[@id='input_planListPager']/input"));
+				Log.info(planName + " not found in Page: " + pageNo.getAttribute("value") + " in Product Grid. Navigating to next page" );
+				nextNavigation.click();
+				waitForAjax();
+				nextNavigation = driver.findElement(By.xpath("//*[@id='next_planListPager']"));
+				//Log.info("Class Attribute: " + nextNavigation.getAttribute("class"));
+				//Log.info("Enabled: " + nextNavigation.isEnabled());
+				if (!nextNavigation.getAttribute("class").contains("ui-state-disabled")){
+					nextEnabled=true;
+				}else
+				{
+					nextEnabled=false;
+				}
+				wbElement =  driver.findElements(by);
+			}
+			wbElement =  driver.findElements(by);
+			if (wbElement.size()==0) {
+				Log.info("Not able to find '"+ planName + "' in '" + FieldName + "' in '" + ScreenName + "' screen");
+				Report.PutFail("Not able to find '"+ planName + "' in '" + FieldName + "' in '" + ScreenName + "' screen");	
+			}
+			else if (wbElement.size() > 1) {
+				Log.info("More than one '"+ planName + "' found in '" + FieldName + "' in '" + ScreenName + "' screen");
+				Report.PutFail("More than one '"+ planName + "' found in '" + FieldName + "' in '" + ScreenName + "' screen");		
+				}
+			else {
+				scrollIntoWebElementMethod(wbElement.get(0));
+				wbElement.get(0).click();
+				highLighterMethod(wbElement.get(0));
+				Report.PutPass("Selection of '"+ planName + "' in '" + FieldName + "' in '" + ScreenName + "' screen is successfull.");	
+			}
+			}
+			catch(Exception e)
+			{
+				//error_count++;
+				Log.error("Error in selectPlan in FunctionLibrary class");
+				Log.error(e);
+				Report.PutFail("Error in Plan Selection for plan: '"+ planName + "' in '" + FieldName + "' in '" + ScreenName + "' screen");
+			}			
+	}
+		
 	//Setting ByClass
 	public static By getByClass(String identifier, String locator){
 
