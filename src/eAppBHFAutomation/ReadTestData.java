@@ -159,15 +159,17 @@ public class ReadTestData {
 							Date date = currentRow.getCell(testcaseno).getDateCellValue();
 							testData.put("Data",dateFormat.format(date));
 						} else {
-							testData.put("Data", String.valueOf(currentRow.getCell(testcaseno).getNumericCellValue()));
+							Double data = currentRow.getCell(testcaseno).getNumericCellValue();
+							if ((data - data.intValue() == 0.00) || (data - data.intValue() == 0.0)) {
+							testData.put("Data", String.valueOf(data.intValue()));
+							} else {
+								testData.put("Data", String.valueOf(data));}
 						}
 						break;
 					case STRING:
-
 						testData.put("Data",currentRow.getCell(testcaseno).getStringCellValue());
 						break;
 					case BOOLEAN :
-
 						testData.put("Data", String.valueOf(currentRow.getCell(testcaseno).getBooleanCellValue()));
 						break;
 					case FORMULA :
@@ -201,7 +203,13 @@ public class ReadTestData {
 		String tempString="";
 		switch (cellValue.getCellTypeEnum()) {
 		case NUMERIC:
-			tempString= String.valueOf(cellValue.getNumberValue());
+			//tempString= String.valueOf(cellValue.getNumberValue());
+			Double data = cellValue.getNumberValue();
+			if ((data - data.intValue() == 0.00) || (data - data.intValue() == 0.0)) {
+				tempString =  String.valueOf(data.intValue());
+			} else {
+				tempString =  String.valueOf(data);
+				}
 			break;
 		case STRING:
 			tempString= cellValue.getStringValue();
