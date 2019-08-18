@@ -468,7 +468,7 @@ public class FunctionLibrary {
 			//Switch to new page if new page opens
 			if(no_of_windows_new.size() != no_of_windows_old.size()) {
 			for(String winHandle : driver.getWindowHandles()){
-				System.out.println(winHandle);
+				//System.out.println(winHandle);
 				driver.switchTo().window(winHandle);
 			}}
 			waitForAjax();
@@ -1066,8 +1066,8 @@ public class FunctionLibrary {
 		ScreenShotFileName = TestCaseID + "_" + TestStepNo + "_" + temp + ".png";
 		try {
 			File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(src, new File(ScreenShotPath + "/" + ScreenShotFileName));
-			return ScreenShotPath + "/" + ScreenShotFileName;
+			FileUtils.copyFile(src, new File(ScreenShotPath + "\\" + ScreenShotFileName));
+			return ScreenShotPath + "\\" + ScreenShotFileName;
 		}
 		catch(Exception e){
 			Log.error("Error in captureScreen in FunctionLibrary class: " + e.toString());
