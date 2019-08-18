@@ -21,22 +21,45 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ReadTestData {
 
 	//Method to Get the Total No of Cases to Execute
-	public static int getTestCases(String fileName) throws IOException 
+	public static HashMap<Integer, LinkedHashMap<String, String>> getTestCases(String fileName) throws IOException 
 	{
+		HashMap<Integer, LinkedHashMap<String, String>> testSuite = new LinkedHashMap<Integer, LinkedHashMap<String, String>>();
+		LinkedHashMap<String, String> testCase;
 		FileInputStream excelFile = new FileInputStream(new File(fileName));
 		XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
 		XSSFSheet TestCase_Sheet = workbook.getSheet("TestCase");
+		Row currentRow;
 		Iterator<Row> iterator = TestCase_Sheet.iterator();
 		int rowCount = 0;
+		Log.info("Test Cases Information:");
 		while (iterator.hasNext()) 
 		{
+			if (rowCount==0) {
+				//do nothing
+				iterator.next();
+			}
+			else {
+			try{
+				testCase = new LinkedHashMap<String, String>();
+				currentRow = iterator.next();
+				testCase.put("TestCaseId", currentRow.getCell(1).getStringCellValue());
+				testCase.put("TestDataSheet", currentRow.getCell(2).getStringCellValue());
+				testCase.put("Executable", currentRow.getCell(3).getStringCellValue());
+				Log.info(testCase);
+				testSuite.put(rowCount, testCase );
+				}
+			catch (Exception e){
+				Log.error("Error in getting Test Cases in ReadTestData Class");
+				Log.error(e);
+			}
+			}
 			rowCount++;
-			iterator.next();
+			
 		}
 		workbook.close();
 		excelFile.close();
-		Log.info("Total no of case: " + (rowCount-1));
-		return rowCount-1;
+		Log.info("Total no of case: " + testSuite.size());
+		return testSuite;
 	}
 
 	//Method to Get if Particular test case needs to be executed
@@ -82,12 +105,12 @@ public class ReadTestData {
 	}
 
 	//Method to get the Coloumn no of the test case to be executed
-	public static int getTestCaseColumnNo(String fileName, String testcaseno) throws IOException 
+	public static int getTestCaseColumnNo(String fileName, String testDataSheetName, String testcaseno) throws IOException 
 	{
 		try{
 			FileInputStream excelFile = new FileInputStream(new File(fileName));
 			XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
-			XSSFSheet TestCase_Sheet = workbook.getSheet("TestData");
+			XSSFSheet TestCase_Sheet = workbook.getSheet(testDataSheetName);
 			workbook.close();
 			excelFile.close();
 			int columnNo=0;
@@ -113,32 +136,39 @@ public class ReadTestData {
 	}
 
 	//Method to get the total no of rows in the test data sheet
-	public static int getTotalNoOfRows(String fileName) throws IOException 
+	public static HashMap<String, Integer> getTotalNoOfRows(String fileName) throws IOException 
 	{
+		HashMap<String, Integer> totalRows = new LinkedHashMap<String, Integer>();
 		FileInputStream excelFile = new FileInputStream(new File(fileName));
 		XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
-		XSSFSheet TestCase_Sheet = workbook.getSheet("TestData");
-		workbook.close();
 		excelFile.close();
-		Iterator<Row> iterator = TestCase_Sheet.iterator();
-		int rowCount = 0;
-		while (iterator.hasNext()) 
-		{
-			rowCount++;
-			iterator.next();
-		}
-		return rowCount-1;
-	}
+		String sheetname;
+		int rowCount;
 
+		for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+			XSSFSheet TestCase_Sheet = workbook.getSheetAt(i);
+			sheetname = TestCase_Sheet.getSheetName();
+			rowCount=0;
+			Iterator<Row> iterator = TestCase_Sheet.iterator();
+			while (iterator.hasNext()) 
+			{
+				rowCount++;
+				iterator.next();	
+			}
+			totalRows.put(sheetname, rowCount-1);
+		}
+		workbook.close();
+		return totalRows;
+	}
 	//Method to get the test data of the test case to be executed
-	public static HashMap<String, String> getTestCaseData(String fileName, int testcaseno, int RowNo) throws IOException 
+	public static HashMap<String, String> getTestCaseData(String fileName, String testdataSheetName, int testcaseno, int RowNo) throws IOException 
 	{
 		try{
 
 			HashMap<String, String> testData = new LinkedHashMap<String, String>();
 			FileInputStream excelFile = new FileInputStream(new File(fileName));
 			XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
-			XSSFSheet TestCase_Sheet = workbook.getSheet("TestData");
+			XSSFSheet TestCase_Sheet = workbook.getSheet(testdataSheetName);
 			workbook.close();
 			excelFile.close();
 			Row currentRow = TestCase_Sheet.getRow(RowNo);

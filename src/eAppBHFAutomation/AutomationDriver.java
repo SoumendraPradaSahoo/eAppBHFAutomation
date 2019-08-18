@@ -10,6 +10,14 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*#####################################################################################################
+Creator Name: Soumendra Prasad Sahoo
+Company: DXC Technology
+Date Created: 1st Aug 2019
+Class: Automation Driver
+Functionality: To drive the test automation
+#####################################################################################################*/
+
 public class AutomationDriver {
 	static int testCaseNo;
 	private static int TimeOutSeconds; // = 30; //Time to wait for the elements to be available
@@ -26,10 +34,12 @@ public class AutomationDriver {
 	static int ColumnNo;
 	static boolean loginSuccessfull;
 	static HashMap<String, String> testData = new LinkedHashMap<String, String>();
+	static HashMap<String, Integer> totalRows = new LinkedHashMap<String, Integer>();
 	static HashMap<String, LinkedHashMap<String, String>> allLocators = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+	static HashMap<Integer, LinkedHashMap<String, String>> testSuite = new LinkedHashMap<Integer, LinkedHashMap<String, String>>();
 
 	public static void main(String[] args) throws IOException{
-		Log.info("------------------------------------------------------------------");
+		Log.info("-------------------------###############################################################------------------------");
 		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 		Date date = new Date();  
 		Log.info("Starting Automation: " + formatter.format(date) );
@@ -88,17 +98,18 @@ public class AutomationDriver {
 		int total_TestCases = 0;
 		//Get no of test cases to be executed
 		try {
-			total_TestCases = ReadTestData.getTestCases(FILE_NAME);
+			testSuite = ReadTestData.getTestCases(FILE_NAME);
+			total_TestCases = testSuite.size();
 		} catch (IOException e) {
 			Log.error("Error in calling ReadTestData.getTestCases in AutomationDriver class");
 			Log.error(e);
 			return;
 		}
 
-		//Get total no of rows in TestData sheet
-		int totalnoofrows = 0;
+		//Get total no of rows in all TestData sheet
 		try{
-			totalnoofrows= ReadTestData.getTotalNoOfRows(FILE_NAME);
+			totalRows = ReadTestData.getTotalNoOfRows(FILE_NAME);
+			//totalnoofrows= ReadTestData.getTotalNoOfRows(FILE_NAME);
 		}
 		catch (Exception e)
 		{
@@ -122,16 +133,19 @@ public class AutomationDriver {
 		{
 			
 			HashMap<String, String> testCase = new LinkedHashMap<String, String>();
-			testCase = ReadTestData.getExecutable(FILE_NAME, i);
-			String testCaseId = testCase.get("testCase");
-			String testCaseExecutable = testCase.get("executable");
+			testCase = testSuite.get(i);
+			//testCase = ReadTestData.getExecutable(FILE_NAME, i);
+			String testCaseId = testCase.get("TestCaseId");
+			String testCaseExecutable = testCase.get("Executable");
+			String testDataSheetName = testCase.get("TestDataSheet");
+			int totalnoofrows = totalRows.get(testDataSheetName);
 			boolean freshcase = true;
 			FunctionLibrary.error_count = 0; //setting error count to 0 for fresh case
 			int testcasecolumnno = -1;
-			if (testCaseExecutable.equalsIgnoreCase("YES")) //Only test cases have Yes will be executed
+			if (testCaseExecutable.equalsIgnoreCase("YES")) //Only test cases having Yes will be executed
 			{
 				int error_count_current_case;
-				testcasecolumnno = ReadTestData.getTestCaseColumnNo(FILE_NAME, testCaseId);
+				testcasecolumnno = ReadTestData.getTestCaseColumnNo(FILE_NAME, testDataSheetName, testCaseId);
 				if (testcasecolumnno > 0) {
 					Report.CreateTest(testCaseId);
 					//System.out.println("Starting Test Case " + testCaseId );
@@ -141,8 +155,7 @@ public class AutomationDriver {
 					String data = "";
 					do{				
 						
-						testData = ReadTestData.getTestCaseData(FILE_NAME, testcasecolumnno, startRowOfTestCase);
-						
+						testData = ReadTestData.getTestCaseData(FILE_NAME, testDataSheetName, testcasecolumnno, startRowOfTestCase);
 						data = testData.get("Data");
 						int currentRowofTestCase = startRowOfTestCase;
 						error_count_current_case=FunctionLibrary.error_count;
