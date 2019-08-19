@@ -14,7 +14,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class WriteTestData {
 	//Method to set the data into the test case
-	public static void setTestData(int rowid, int coloumnid, String DataValue) 
+	static String testDataSheetName;
+	public static void setTestData(int rowid, int coloumnid, String DataValue) throws Exception 
 	{
 		try{
 			//Reading Properties file
@@ -24,7 +25,7 @@ public class WriteTestData {
 			String TESTCASE_FILENAME = p.getProperty("TestData_Filename");
 			FileInputStream excelFile = new FileInputStream(new File(TESTCASE_FILENAME));
 			XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
-			XSSFSheet TestCase_Sheet = workbook.getSheet("TestData");
+			XSSFSheet TestCase_Sheet = workbook.getSheet(testDataSheetName);
 			excelFile.close();
 			Row currentRow;
 			Cell currentCell;
@@ -52,6 +53,7 @@ public class WriteTestData {
 		catch (Exception e){
 			Log.error("Error in setTestData in WriteTestData class");
 			Log.error(e);
+			throw new Exception(e);
 		}
 	}
 }

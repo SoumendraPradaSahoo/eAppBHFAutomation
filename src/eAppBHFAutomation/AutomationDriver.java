@@ -138,6 +138,7 @@ public class AutomationDriver {
 			String testCaseId = testCase.get("TestCaseId");
 			String testCaseExecutable = testCase.get("Executable");
 			String testDataSheetName = testCase.get("TestDataSheet");
+			WriteTestData.testDataSheetName = testDataSheetName;
 			int totalnoofrows = totalRows.get(testDataSheetName);
 			boolean freshcase = true;
 			FunctionLibrary.error_count = 0; //setting error count to 0 for fresh case
