@@ -71,7 +71,7 @@ public class AutomationDriver {
 	    if(file.renameTo(sameFileName)){// if the file is renamed
 	        Log.info("Test Data File is closed: " + FILE_NAME + ". Proceeding with execution.");
 	    }else{// if the file didnt accept the renaming operation
-	    	Log.info("Test Data File is closed: " + FILE_NAME + ". Terminating execution.");
+	    	Log.info("Test Data File is not closed: " + FILE_NAME + ". Terminating execution.");
 	    	return;
 	    }//Test Data file checking ends
 		

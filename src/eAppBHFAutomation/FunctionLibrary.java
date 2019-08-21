@@ -249,7 +249,7 @@ public class FunctionLibrary {
 			break;
 		case "VERIFYCLIENTMESSAGE":
 			try {
-				verifyClientMsg(data);
+				verifyClientMsg(identifiers.get("Field_Type"), data);
 			} catch (IOException e) {
 				Log.error("Error in verifyClientMsg Function in FunctionLibrary Class: " + e.toString());
 				Log.error(e);
@@ -275,6 +275,12 @@ public class FunctionLibrary {
 		case "VERIFYPOLICYSTATUS":
 		verifyPolicyStatus(data);
 		break;
+		case "SELECTFUND":
+			selectFund(data);
+			break;
+		case "VERIFYFUNDNAME":
+			verifyFundName(data);
+			break;
 		case "SELECTPLAN":
 			selectPlan(data);
 			break;
@@ -488,7 +494,7 @@ public class FunctionLibrary {
 		}
 	}
 
-	public static void verifyClientMsg(String message) throws IOException
+	public static void verifyClientMsg(String fieldtype, String message) throws IOException
 	{
 		String report_text = "";
 		String actual_message = "";
@@ -497,7 +503,17 @@ public class FunctionLibrary {
 				" in screen " + ScreenName + ", Expected: '" + message + "' ; Actual: '" ;
 		try{
 			wbElementField = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
-			wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
+			//wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
+			//wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOf((wbElementField.findElement(By.xpath("following-sibling::div[@class='validationMsg']/label")))));
+			
+			switch (fieldtype.toUpperCase()) {
+			case "RADIOOPTION":
+				wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOf((wbElementField.findElement(By.xpath("parent::*/following-sibling::div[@class='validationMsg']/label")))));
+				break;
+			default:
+				wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOf((wbElementField.findElement(By.xpath("following-sibling::div[@class='validationMsg']/label")))));
+				break;
+			}
 			
 			waitForAjax();
 			actual_message = wbElement.getText();
@@ -574,7 +590,7 @@ public class FunctionLibrary {
 			else if (count==0)
 			{
 				//error_count++;
-				Report.PutFail(report_text + "'. So such message found.");
+				Report.PutFail(report_text + "'. No such message found.");
 				
 			}
 
@@ -694,7 +710,8 @@ public class FunctionLibrary {
 	{
 		try{
 			List<WebElement> wbElement;
-			wbElement = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+			//wbElement = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+			wbElement = driver.findElements(by);
 			int visible_count=0;
 			int invisible_count=0;
 			for(WebElement wb:wbElement) {
@@ -730,6 +747,79 @@ public class FunctionLibrary {
 			Report.PutFail("Error in visiblity verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
 		}
 	}
+	
+	//selectFund
+	public static void selectFund(String value) throws IOException
+	{
+		String[] temp;
+		if (value.contains(",")){
+			temp=value.split(",");
+			String fundId = temp[0].trim();
+			String fundPercentage = temp[1].trim();
+			
+			try{
+				WebElement fundField;
+				variableLocator = fundId;
+				by = getByClass(identifiers.get("Identifier"), identifiers.get("Locator"));
+				fundField =  new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				fundField.sendKeys(fundPercentage);
+				fundField.sendKeys(Keys.TAB);
+				waitForAjax();
+				}
+			catch(Exception e)
+			{  //error_count++;
+				Log.error("Error in selectFund in FunctionLibrary class");
+				Log.error(e);
+				Report.PutFail("Error in Fund Selection for fund Id: " + fundId + " in screen '" + ScreenName + "'");
+			}
+			
+		}
+		else
+		{	//error_count++;
+			Report.PutFail("Test data error for fund Selection at " + FieldName + "' in screen '" + ScreenName + "Expected data in format (fundId, fund%) but got " + value);
+		}
+	}
+	
+	//selectFund
+		public static void verifyFundName(String value) throws IOException
+		{
+			String[] temp;
+			String report_text;
+			if (value.contains(",")){
+				temp=value.split(",");
+				String fundId = temp[0].trim();
+				String fundName = temp[1].trim();
+				report_text = "Verification of fund name for " + fundId +
+						" in  Screen " + ScreenName + " , Expected: '" + fundName + "' , Actual: '" ;
+				try{
+					WebElement fundField;
+					Select fundDDLB;
+					variableLocator = fundId;
+					by = getByClass(identifiers.get("Identifier"), identifiers.get("Locator"));
+					fundField =  new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+					fundDDLB = new Select(fundField);
+					String actualFundName = fundDDLB.getFirstSelectedOption().getText();
+					report_text = report_text + actualFundName + "'";
+					if (actualFundName.equalsIgnoreCase(fundName)){
+						Report.PutPass(report_text);}
+					else {
+						Report.PutFail(report_text);
+					}
+					}
+				catch(Exception e)
+				{  //error_count++;
+					Log.error("Error in verifyFundName in FunctionLibrary class");
+					Log.error(e);
+					Report.PutFail("Error in Fund Name Verification for fund Id: " + fundId + " in screen '" + ScreenName + "'");
+				}
+				
+			}
+			else
+			{	//error_count++;
+				Report.PutFail("Test data error for fund Name Verification at " + FieldName + "' in screen '" + ScreenName + "Expected data in format (fundId, fundName) but got " + value);
+			}
+		}
+	
 	
 	//Verify policy Status. value should be in format (PolicyNumber, Status)
 	@SuppressWarnings("deprecation")
