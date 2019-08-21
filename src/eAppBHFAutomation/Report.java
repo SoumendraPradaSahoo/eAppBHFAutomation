@@ -1,5 +1,6 @@
 package eAppBHFAutomation;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -30,6 +31,7 @@ public class Report {
 		     temp = temp.replace(":", ""); //Report File Name ends
 		     reportfilename = filename_path + "/Execution Report " + temp + ".html";
 		report = new ExtentHtmlReporter(reportfilename);
+		report.loadXMLConfig(new File("Object/ReportConfig.xml"));
 		logger = new ExtentReports();	
 		logger.attachReporter(report);
 		logger.setSystemInfo("OS", "win10");
