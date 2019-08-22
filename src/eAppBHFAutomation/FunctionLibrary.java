@@ -826,6 +826,7 @@ public class FunctionLibrary {
 	public static void verifyPolicyStatus(String value) throws IOException
 	{
 		String[] temp;
+		
 		if (value.contains(",")){
 			temp=value.split(",");
 			String polNumber = temp[0].trim();
@@ -863,10 +864,12 @@ public class FunctionLibrary {
 						WebElement tempWbElement = driver.findElement(by);
 						String actualStatus;
 						actualStatus = tempWbElement.getText();
-						if(polStatus.equalsIgnoreCase(actualStatus) || (!("Acknowledged".equalsIgnoreCase(polStatus)) && !("Failed".equalsIgnoreCase(polStatus)))) {
+						if(polStatus.equalsIgnoreCase(actualStatus) || ("Acknowledged".equalsIgnoreCase(actualStatus)) || ("Failed".equalsIgnoreCase(actualStatus)) || 
+								(!("Acknowledged".equalsIgnoreCase(polStatus)) && !("Failed".equalsIgnoreCase(polStatus)))) {
 							return tempWbElement;}	
 						else 
-						return null;}
+						return null;
+						}
 						
 				});
 				String actualStatus;
