@@ -54,12 +54,21 @@ public class Report {
 		}
 	
 	public static void PutPass(String message) throws IOException {
+		
+		String reportPath = FunctionLibrary.captureScreen();
+		if (reportPath.equals(""))
+		test.log(Status.PASS, message);
+		else
 		test.log(Status.PASS, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());	
 	}
 	
 	public static void PutFail(String message) throws IOException {
 		FunctionLibrary.error_count++;
-		test.log(Status.FAIL, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());		
+		String reportPath = FunctionLibrary.captureScreen();
+		if (reportPath.equals(""))
+		test.log(Status.FAIL, message);
+		else
+		test.log(Status.FAIL, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());
 	}
 	public static void PutFailWithoutScreenShot(String message) throws IOException {
 		FunctionLibrary.error_count++;

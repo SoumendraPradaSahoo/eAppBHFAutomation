@@ -25,6 +25,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -53,7 +54,7 @@ public class FunctionLibrary {
 	//static WebElement wbElement;
 	
 	//Login Function
-	public static void login(String browser_type, String driver_path,String url, String uname, String pwd, int timeout)
+	public static void login(String browser_type, String driver_path,String url, String uname, String pwd, int timeout) throws Exception
 	{  
 		TimeOutSeconds = timeout;
 		if (browser_type.equalsIgnoreCase("Chrome"))
@@ -66,7 +67,7 @@ public class FunctionLibrary {
 			System.setProperty("webdriver.ie.driver", driver_path + "/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
-		
+
 		driver.manage().timeouts().pageLoadTimeout(TimeOutSeconds,TimeUnit.SECONDS);
 		//driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
@@ -79,21 +80,22 @@ public class FunctionLibrary {
 			Thread.sleep(2000);  // Let the user actually see something!
 			//System.out.println(driver.findElement(By.xpath("//*[@id='index_box']/div[@class='logo']/div/span")).getText());
 			if ((driver.findElement(By.xpath("//*[@id='index_box']/div[@class='logo']/div/span")).getText().equals("Welcome to: Brighthouse e-App"))) {
-			Log.info("Launch Console displayed..");	
+				Log.info("Launch Console displayed..");	
 			}
 			else {
-				throw new NoSuchElementException("Application not displayed");
+				Log.error("Application Launch Console not displayed.");
+				throw new Exception("Application Launch Console not displayed.");
 			}
-			
+
 			Set<String> windowHandles = driver.getWindowHandles();
 			if (windowHandles.size()>1) {
 				Log.info("Login Page is opened automatically. Changing drive to Login Console");
 				Log.info("-----Open Windows Titles-----");
 				for(String winHandle : windowHandles){
-				//System.out.println(winHandle);
-				driver.switchTo().window(winHandle);
-				Log.info(driver.getTitle());
-			}}
+					//System.out.println(winHandle);
+					driver.switchTo().window(winHandle);
+					Log.info(driver.getTitle());
+				}}
 			else {
 				Log.info("Login Page is not opened automatically. Clicking lauch button in Launch Console to open Login Page.");
 				new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(By.id("launchBtn")));
@@ -102,7 +104,7 @@ public class FunctionLibrary {
 					driver.switchTo().window(winHandle);
 				}
 			}
-			
+
 			Log.info("Driver changed to Login Console");
 			Log.info("Login Console Page Title: " + driver.getTitle());
 			waitForAjax();
@@ -111,34 +113,62 @@ public class FunctionLibrary {
 			driver.findElement(By.name("username")).sendKeys(uname);
 			driver.findElement(By.name("password")).sendKeys(pwd);
 			driver.findElement(By.name("_eventId__logon")).click();
+			waitForAjax();
+
+			List<WebElement> wbList = driver.findElements(By.xpath("//div[@id='loginError']/section/div"));
+			for (WebElement wb:wbList) {
+				if (wb.isDisplayed()) {
+					Log.error("Error  in credentials: " + wb.getText());
+					throw new Exception("Error  in credentials. Agent Console Page is not displayed.");
+				}
+			}
+
+			new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(By.id("agentConsoleTitle")));
+			String agentConsoleTitle = driver.findElement(By.id("agentConsoleTitle")).getText();
+			if (agentConsoleTitle.equals("Agent Console")) {
+				Log.info("Agent Console Page displayed.");
+			}else {
+				Log.error("Agent Console Page is not displayed.");
+				throw new Exception("Agent Console Page is not displayed.");
+			}
 		}
 		catch (Exception e){
 			driver.close();
 			driver.quit();
-			throw new NoSuchElementException("Application not displayed");
+			throw new Exception(e.getMessage());
 		}
 
 	}
 
 	//Logout Function
 	public static void logout() {
-		String[] currHandle= new String[5];
-		int i=0;
+		String agentConsoleHandle="";
+		boolean agentConsoleOpen = false;
 		//System.out.println("Went to logout java");
 		Log.info("Went to logout java");
-		for(String winHandle : driver.getWindowHandles()){
-			currHandle[i++]=winHandle;
-		}
-		driver.switchTo().window(currHandle[1]);
-
 		try{
+		for(String winHandle : driver.getWindowHandles()){
+			driver.switchTo().window(winHandle);
+			if (driver.getTitle().equals("Accelerator Console - Agent")) {
+			agentConsoleOpen=true;
+			agentConsoleHandle = winHandle;
+			break;
+			}
+		}
+		
+		if (agentConsoleOpen) {
+			driver.switchTo().window(agentConsoleHandle);
+			}
+			else {
+				throw new Exception();
+			}
+	
 			new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.elementToBeClickable((By.id("logout")))).click();
 			//System.out.println("Logout is clicked");
 			Log.info("Logout is clicked");
 			//Handle Popup	
 			Alert alert = driver.switchTo().alert();
 			alert.accept();
-			driver.switchTo().window(currHandle[0]);
 			driver.quit();
 		}
 		catch (Exception e){
@@ -152,38 +182,40 @@ public class FunctionLibrary {
 
 	//FreshCase - Closing the already opened window
 	public static void freshCase() {
-		String[] currHandle = new String[driver.getWindowHandles().size()];
+		String agentConsoleHandle="";
 		int i=0;
-		//System.out.println("Went to FreshCase");
+		boolean agentConsoleOpen = false;
 		Log.info("Went to FreshCase");
+		try {
 		for(String winHandle : driver.getWindowHandles()){
-			currHandle[i++]=winHandle;
+			driver.switchTo().window(winHandle);
+			if (driver.getTitle().equals("Accelerator Console - Agent")) {
+			agentConsoleOpen=true;
+			agentConsoleHandle = winHandle;
+			}
+			if (i>=2) {
+			driver.close();	}
+			i++;
 		}
-
-		if (i>2)
-			driver.close();	
-		driver.switchTo().window(currHandle[1]);
-		/*WebElement cancelBtn = null;
-		try{
-			System.out.println("In Try block in Fresh Case");
-           //cancelBtn = driver.findElement(By.xpath("//input[@type='button' and @value='Cancel']")); 
-           cancelBtn =  new WebDriverWait(driver, 2).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='button' and @value='Cancel']")));
-           cancelBtn.click();
-           waitForAjax();
-        }
-        catch(Exception e){
-        	System.out.println("In Catch block in Fresh Case");
-        	if (!(cancelBtn == null)) {
-        		System.out.println("Cancel button is not NULL. Performing new login");
-        		Log.error("Error in freshCase in FunctionLibrary class. Not able to click cancel button");
-    			e.printStackTrace();
-    			Log.error(e.toString());   
-    			driver.close();	
-    			driver.quit();
-    			AutomationDriver.login();
-    			
+		if (agentConsoleOpen) {
+		driver.switchTo().window(agentConsoleHandle);
+		}
+		else {
+			throw new WebDriverException();
+		}
+	}
+		
+        catch(WebDriverException e){
+        	Log.error("Got webdriver exception in FreshCase. Closing the browser");
+        	Log.error(e);
+			driver.quit();
+			Log.info("Re-initializing Browser again...");
+			AutomationDriver.login();	
         	}	
-        }*/
+		catch (Exception e) {
+			Log.error("Error in switching browser for new Test case");
+        	Log.error(e);
+		}
 	}
 
 	public static void executeStep(HashMap<String, String> testData, int currentRow, int columnNo, String identifier_fileName, boolean freshCase) throws IOException 
