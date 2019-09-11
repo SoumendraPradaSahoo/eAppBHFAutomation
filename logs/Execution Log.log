@@ -1,0 +1,1058 @@
+17:56:02 [ INFO] [main] - -------------------------###############################################################------------------------
+17:56:02 [ INFO] [main] - Starting Automation: 11/09/2019 17:56:02
+17:56:02 [ INFO] [main] - Test Data File is closed: C:\Users\ssahoo43\D_Drive\eAppBHFAutomation\Test Case/eApp Test Data.xlsx. Proceeding with execution.
+17:56:02 [ INFO] [main] - Reading Page manager and populating 'allLocators' map
+17:56:03 [ INFO] [main] - Locator for Page Name in page PageManager: PageManager.Page Name
+17:56:03 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for Agent Console in page PageManager: PageManager.Agent Console
+17:56:03 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for New Application in page PageManager: PageManager.New Application
+17:56:03 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for Owner in page PageManager: PageManager.Owner
+17:56:03 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for Electronic Delivery in page PageManager: PageManager.Electronic Delivery
+17:56:03 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for Field Name in page Agent Console: Agent Console.Field Name
+17:56:03 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:03 [ INFO] [main] - Locator for New Application in page Agent Console: Agent Console.New Application
+17:56:03 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='startNew']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for In Progress in page Agent Console: Agent Console.In Progress
+17:56:03 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='inProgress']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:03 [ INFO] [main] - Locator for Submitted in page Agent Console: Agent Console.Submitted
+17:56:03 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='submitted']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page New Application: New Application.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Product Grid in page New Application: New Application.Product Grid
+17:56:04 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://td[@title='+PlanofInsurace+'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for New Application in page New Application: New Application.New Application
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:NewApplication | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Import Data in page New Application: New Application.Import Data
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:ImportData | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Quote in page New Application: New Application.Quote
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Quote | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page In Progress: In Progress.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Client Name in page In Progress: In Progress.Client Name
+17:56:04 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://td[@aria-describedby='list2_policyNumber' and text()='+PolicyNumber+']/preceding-sibling::td[@aria-describedby='list2_clientName']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Status in page In Progress: In Progress.Status
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://td[@aria-describedby='list2_policyNumber' and text()='+PolicyNumber+']/following-sibling::td[@aria-describedby='list2_status'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page Quote: Quote.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for First Name in page Quote: Quote.First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for MI in page Quote: Quote.MI
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Last Name in page Quote: Quote.Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Suffix in page Quote: Quote.Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Application Jurisdiction in page Quote: Quote.Application Jurisdiction
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ApplicationJurisdiction | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ApplicationJurisdiction_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Save Age in page Quote: Quote.Save Age
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_SaveAgeInd | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_SaveAgeInd_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Requested Policy Effective Date in page Quote: Quote.Requested Policy Effective Date
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_RequestedIssueDate | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for DOB in page Quote: Quote.DOB
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOB_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Age in page Quote: Quote.Age
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_Age_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Age_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Gender in page Quote: Quote.Gender
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Gender_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Gender_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Tobacco User in page Quote: Quote.Tobacco User
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_TobaccoPremiumBasis_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_TobaccoPremiumBasis_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Coverage Amount in page Quote: Quote.Coverage Amount
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_CurrentAmt | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_CurrentAmt_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Risk Classification Applied For in page Quote: Quote.Risk Classification Applied For
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_RateClassAppliedFor_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_RateClassAppliedFor_PINS_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Billing Frequency in page Quote: Quote.Billing Frequency
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_PaymentMode | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PaymentMode_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for ADB Rider in page Quote: Quote.ADB Rider
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_ADBRider | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ADBRider_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for ADB Amount in page Quote: Quote.ADB Amount
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_ADBRiderAmt | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ADBRiderAmt_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for WOP Rider in page Quote: Quote.WOP Rider
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_WOPRider | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_WOPRider_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Child Rider in page Quote: Quote.Child Rider
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_CTRider | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_CTRider_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Same Payor Discount in page Quote: Quote.Same Payor Discount
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_SamePyrDiscountInd | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_SamePyrDiscountInd_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Employee Discount in page Quote: Quote.Employee Discount
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_EmployeeDiscountInd | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EmployeeDiscountInd_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Association Discount in page Quote: Quote.Association Discount
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_AstDiscountInd | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AstDiscountInd_quote_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Quote in page Quote: Quote.Quote
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://input[@id='quoteButton'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Start New Application in page Quote: Quote.Start New Application
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:startNewAppButton | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Save and Exit in page Quote: Quote.Save and Exit
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:saveAndExitButton | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for New Quote in page Quote: Quote.New Quote
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:newQuoteButton | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Print Quote in page Quote: Quote.Print Quote
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:printQuoteButton | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page Submitted: Submitted.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Client Name in page Submitted: Submitted.Client Name
+17:56:04 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='+PolicyNumber+']/preceding-sibling::td[@aria-describedby='submittedIndexGrid_clientName'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Status in page Submitted: Submitted.Status
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='+PolicyNumber+']/following-sibling::td[@aria-describedby='submittedIndexGrid_status'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page Getting Started: Getting Started.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Policy Number in page Getting Started: Getting Started.Policy Number
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Screen Name in page Getting Started: Getting Started.Screen Name
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Application Received Date in page Getting Started: Getting Started.Application Received Date
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AppReceive_Date | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AppReceive_Date_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Application CRDA in page Getting Started: Getting Started.Application CRDA
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_WorkItemID | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_WorkItemID_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Representative ID in page Getting Started: Getting Started.Representative ID
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AgentID_AGT1 | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AgentID_AGT1_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Application Signed State in page Getting Started: Getting Started.Application Signed State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ApplicationJurisdiction | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ApplicationJurisdiction_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Product in page Getting Started: Getting Started.Product
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ProductCode_Annuity | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ProductCode_Annuity_getting_started_lifeterm']
+17:56:04 [ INFO] [main] - Locator for Contract Applied For in page Getting Started: Getting Started.Contract Applied For
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ContractAppliedFor | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ContractAppliedFor_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Plan Type in page Getting Started: Getting Started.Plan Type
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ContractAppliedFor | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ContractAppliedFor_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Tax market applied for in page Getting Started: Getting Started.Tax market applied for
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ContractAppliedFor | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ContractAppliedFor_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Principal Guarantee Rider in page Getting Started: Getting Started.Principal Guarantee Rider
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_PGRCB | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PGRCB_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Initial Guarantee Period in page Getting Started: Getting Started.Initial Guarantee Period
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_GuaranteePeriod | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GuaranteePeriod_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Quote Number in page Getting Started: Getting Started.Quote Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_IllustrationIDNum | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_IllustrationIDNum_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Quote Date in page Getting Started: Getting Started.Quote Date
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_Illustration_Dt | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Illustration_Dt_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Contract/Account Number in page Getting Started: Getting Started.Contract/Account Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_PolNum_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PolNum_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Current Company in page Getting Started: Getting Started.Current Company
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_CurrentCompany_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_CurrentCompany_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Prefix in page Getting Started: Getting Started.Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Prefix_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for First Name in page Getting Started: Getting Started.First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Middle Name in page Getting Started: Getting Started.Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Last Name in page Getting Started: Getting Started.Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Suffix in page Getting Started: Getting Started.Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Social Security Number in page Getting Started: Getting Started.Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_GovtID_SSN_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_SSN_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Date of Birth in page Getting Started: Getting Started.Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOB_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Date of Death in page Getting Started: Getting Started.Date of Death
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOD_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOD_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Is the Beneficiary the Deceased Contact Owner's Spouse? in page Getting Started: Getting Started.Is the Beneficiary the Deceased Contact Owner's Spouse?
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_IsSpousal_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_IsSpousal_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Date the established Decedent IRA was issued in page Getting Started: Getting Started.Date the established Decedent IRA was issued
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_IssueDate_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_IssueDate_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Previous 12/31Account Value in page Getting Started: Getting Started.Previous 12/31Account Value
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_PrevAccValue_DecedentIRA | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PrevAccValue_DecedentIRA_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Owner is different than Annuitant? in page Getting Started: Getting Started.Owner is different than Annuitant?
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_OwnOtherThanAnn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_OwnOtherThanAnn_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Is there a Joint Owner? in page Getting Started: Getting Started.Is there a Joint Owner?
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_JointOwnInd_Copy | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_JointOwnInd_Copy_getting_started_annuities']
+17:56:04 [ INFO] [main] - Locator for Next in page Getting Started: Getting Started.Next
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page Annuitant: Annuitant.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Policy Number in page Annuitant: Annuitant.Policy Number
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Screen Name in page Annuitant: Annuitant.Screen Name
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Prefix in page Annuitant: Annuitant.Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Prefix_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for First Name in page Annuitant: Annuitant.First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Middle Name in page Annuitant: Annuitant.Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Last Name in page Annuitant: Annuitant.Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Suffix in page Annuitant: Annuitant.Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Attention Line in page Annuitant: Annuitant.Attention Line
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine1_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine1_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Street Address in page Annuitant: Annuitant.Street Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine2_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine2_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Line2 in page Annuitant: Annuitant.Line2
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine3_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine3_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Line3 in page Annuitant: Annuitant.Line3
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine4_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine4_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for City in page Annuitant: Annuitant.City
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_City_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_City_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for State in page Annuitant: Annuitant.State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_State_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_State_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Zip in page Annuitant: Annuitant.Zip
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_ZipCode_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ZipCode_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Country in page Annuitant: Annuitant.Country
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Country_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Country_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Gender in page Annuitant: Annuitant.Gender
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Gender_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Gender_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Date of Birth in page Annuitant: Annuitant.Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOB_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Social Security Number in page Annuitant: Annuitant.Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_GovtID_SSN_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_SSN_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Phone Number in page Annuitant: Annuitant.Phone Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_PhoneNum_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PhoneNum_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for E-Mail Address in page Annuitant: Annuitant.E-Mail Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_EmailAddress_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EmailAddress_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Country of Legal Residence in page Annuitant: Annuitant.Country of Legal Residence
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ResidencyCountry_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ResidencyCountry_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Country of Citizenship in page Annuitant: Annuitant.Country of Citizenship
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Citizenship_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Citizenship_PINS_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Is there a Joint Annuitant? in page Annuitant: Annuitant.Is there a Joint Annuitant?
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_JointAnnInd | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_JointAnnInd_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Prefix in page Annuitant: Annuitant.Jnt Ann Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Prefix_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann First Name in page Annuitant: Annuitant.Jnt Ann First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Middle Name in page Annuitant: Annuitant.Jnt Ann Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Last Name in page Annuitant: Annuitant.Jnt Ann Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Suffix in page Annuitant: Annuitant.Jnt Ann Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Attention Line in page Annuitant: Annuitant.Jnt Ann Attention Line
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine1_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine1_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Street address in page Annuitant: Annuitant.Jnt Ann Street address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine2_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine2_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Line2 in page Annuitant: Annuitant.Jnt Ann Line2
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine3_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine3_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Line3 in page Annuitant: Annuitant.Jnt Ann Line3
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine4_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine4_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann City in page Annuitant: Annuitant.Jnt Ann City
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_City_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_City_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann State in page Annuitant: Annuitant.Jnt Ann State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_State_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_State_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Zip in page Annuitant: Annuitant.Jnt Ann Zip
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_ZipCode_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ZipCode_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Country in page Annuitant: Annuitant.Jnt Ann Country
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Country_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Country_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Gender in page Annuitant: Annuitant.Jnt Ann Gender
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Gender_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Gender_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Date of Birth in page Annuitant: Annuitant.Jnt Ann Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOB_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Social Security Number in page Annuitant: Annuitant.Jnt Ann Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_GovtID_SSN_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_SSN_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Phone Number in page Annuitant: Annuitant.Jnt Ann Phone Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_PhoneNum_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PhoneNum_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Relationship to Annuitant in page Annuitant: Annuitant.Jnt Ann Relationship to Annuitant
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_RelToAnn_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_RelToAnn_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann E-Mail Address in page Annuitant: Annuitant.Jnt Ann E-Mail Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_EmailAddress_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EmailAddress_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Country of Legal Residence in page Annuitant: Annuitant.Jnt Ann Country of Legal Residence
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ResidencyCountry_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ResidencyCountry_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Ann Country of Citizenship in page Annuitant: Annuitant.Jnt Ann Country of Citizenship
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Citizenship_JNT | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Citizenship_JNT_annuitant_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Previous in page Annuitant: Annuitant.Previous
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Save and Exit in page Annuitant: Annuitant.Save and Exit
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Next in page Annuitant: Annuitant.Next
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page Owner: Owner.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Policy Number in page Owner: Owner.Policy Number
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Screen Name in page Owner: Owner.Screen Name
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Annuitant is Owner in page Owner: Owner.Annuitant is Owner
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:id | Locator:AnnuitantisOwnerLabel_owner_information_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Owner Identity in page Owner: Owner.Owner Identity
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_OwnerType_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_OwnerType_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Owner Type in page Owner: Owner.Owner Type
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_OwnerType | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_OwnerType_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Name in page Owner: Owner.Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_EntityName_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EntityName_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Prefix in page Owner: Owner.Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Prefix_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for First Name in page Owner: Owner.First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Middle Name in page Owner: Owner.Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Last Name in page Owner: Owner.Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Suffix in page Owner: Owner.Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Attention Line in page Owner: Owner.Attention Line
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine1_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine1_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Street address in page Owner: Owner.Street address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine2_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine2_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Line2 in page Owner: Owner.Line2
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine3_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine3_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Line3 in page Owner: Owner.Line3
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine4_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine4_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for City in page Owner: Owner.City
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_City_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_City_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for State in page Owner: Owner.State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_State_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_State_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for ZIP in page Owner: Owner.ZIP
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_ZipCode_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ZipCode_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Country in page Owner: Owner.Country
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Country_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Country_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Gender in page Owner: Owner.Gender
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Gender_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Gender_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Date of Birth in page Owner: Owner.Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOB_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Trust Date in page Owner: Owner.Trust Date
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_TrustDate_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_TrustDate_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for State where Trust is sitused in page Owner: Owner.State where Trust is sitused
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_TrustState_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_TrustState_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for UGMA/UTMA Register State in page Owner: Owner.UGMA/UTMA Register State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_UGMAUTMAState_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_UGMAUTMAState_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Social Security Number in page Owner: Owner.Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_GovtID_SSN_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_SSN_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Tax ID Number in page Owner: Owner.Tax ID Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_GovtID_TID_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_TID_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Phone Number in page Owner: Owner.Phone Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_Phone_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Phone_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for E-Mail Address in page Owner: Owner.E-Mail Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_EmailAddress_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EmailAddress_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Country of Legal Residence in page Owner: Owner.Country of Legal Residence
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ResidencyCountry_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ResidencyCountry_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Country of Citizenship in page Owner: Owner.Country of Citizenship
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Citizenship_OWN | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Citizenship_OWN_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Authorize Prefix in page Owner: Owner.Authorize Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Prefix_AUTHORIZED | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_AUTHORIZED_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Authorize First Name in page Owner: Owner.Authorize First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_AUTHORIZED | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_AUTHORIZED_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Authorize Middle Name in page Owner: Owner.Authorize Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_AUTHORIZED | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_AUTHORIZED_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Authorize Last Name in page Owner: Owner.Authorize Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_AUTHORIZED | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_AUTHORIZED_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Authorize Suffix in page Owner: Owner.Authorize Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_AUTHORIZED | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_AUTHORIZED_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Authorize Title in page Owner: Owner.Authorize Title
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_Title_AUTHORIZED | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Title_AUTHORIZED_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Is there a Joint Owner? in page Owner: Owner.Is there a Joint Owner?
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_JointOwnInd | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_JointOwnInd_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Prefix in page Owner: Owner.Jnt Own Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Prefix_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own First Name in page Owner: Owner.Jnt Own First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FirstName_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Middle Name in page Owner: Owner.Jnt Own Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_MiddleName_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Last Name in page Owner: Owner.Jnt Own Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LastName_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Suffix in page Owner: Owner.Jnt Own Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Suffix_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Attention Line in page Owner: Owner.Jnt Own Attention Line
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine1_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine1_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Street address in page Owner: Owner.Jnt Own Street address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine2_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine2_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Line2 in page Owner: Owner.Jnt Own Line2
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine3_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine3_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Line3 in page Owner: Owner.Jnt Own Line3
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_AddressLine4_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine4_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own City in page Owner: Owner.Jnt Own City
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_City_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_City_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own State in page Owner: Owner.Jnt Own State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_State_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_State_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own ZIP in page Owner: Owner.Jnt Own ZIP
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_ZipCode_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ZipCode_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Country in page Owner: Owner.Jnt Own Country
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Country_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Country_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Gender in page Owner: Owner.Jnt Own Gender
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Gender_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Gender_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Date of Birth in page Owner: Owner.Jnt Own Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DOB_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Social Security Number in page Owner: Owner.Jnt Own Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_GovtID_SSN_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_SSN_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Phone Number in page Owner: Owner.Jnt Own Phone Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_Phone_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Phone_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Relationship to Owner in page Owner: Owner.Jnt Own Relationship to Owner
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_RelToOwner_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_RelToOwner_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own E-Mail Address in page Owner: Owner.Jnt Own E-Mail Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_EmailAddress_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EmailAddress_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Country of Legal Residence in page Owner: Owner.Jnt Own Country of Legal Residence
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_ResidencyCountry_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ResidencyCountry_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Jnt Own Country of Citizenship in page Owner: Owner.Jnt Own Country of Citizenship
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Citizenship_JointOwn | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Citizenship_JointOwn_owner_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Previous in page Owner: Owner.Previous
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Save and Exit in page Owner: Owner.Save and Exit
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Next in page Owner: Owner.Next
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Field Name in page Beneficiary: Beneficiary.Field Name
+17:56:04 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:04 [ INFO] [main] - Locator for Policy Number in page Beneficiary: Beneficiary.Policy Number
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Screen Name in page Beneficiary: Beneficiary.Screen Name
+17:56:04 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Divide Proceed equally in page Beneficiary: Beneficiary.Divide Proceed equally
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_PrimaryBeneEqualProceedCB | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Add in page Beneficiary: Beneficiary.Add
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Add_repeatingSection_0 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Same as in page Beneficiary: Beneficiary.Same as
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_BeneficiarySameAs_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Beneficiary Type in page Beneficiary: Beneficiary.Beneficiary Type
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_BeneficiaryType_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_BeneficiaryType_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Name in page Beneficiary: Beneficiary.Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_EntityName_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EntityName_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Prefix in page Beneficiary: Beneficiary.Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Prefix_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for First Name in page Beneficiary: Beneficiary.First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_FirstName_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Middle Name in page Beneficiary: Beneficiary.Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_MiddleName_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Last Name in page Beneficiary: Beneficiary.Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_LastName_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Suffix in page Beneficiary: Beneficiary.Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Suffix_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Relationship to Owner in page Beneficiary: Beneficiary.Relationship to Owner
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_RelToOwner_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_RelToOwner_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Date of Birth in page Beneficiary: Beneficiary.Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_DOB_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Date Trust Created in page Beneficiary: Beneficiary.Date Trust Created
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_TrustDate_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_TrustDate_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Tax ID Number in page Beneficiary: Beneficiary.Tax ID Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_GovtIDTID_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtIDTID_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Social Security Number in page Beneficiary: Beneficiary.Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_GovtIDSSN_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtIDSSN_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Phone Number in page Beneficiary: Beneficiary.Phone Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_PhoneNum_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PhoneNum_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Attention Line in page Beneficiary: Beneficiary.Attention Line
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine1_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine1_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Street Address in page Beneficiary: Beneficiary.Street Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine2_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine2_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Line2 in page Beneficiary: Beneficiary.Line2
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine3_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine3_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Line3 in page Beneficiary: Beneficiary.Line3
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine4_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine4_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for City in page Beneficiary: Beneficiary.City
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_City_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_City_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for State in page Beneficiary: Beneficiary.State
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_State_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_State_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Zip in page Beneficiary: Beneficiary.Zip
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_ZipCode_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ZipCode_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Contry in page Beneficiary: Beneficiary.Contry
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Country_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Country_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for % of Proceeds in page Beneficiary: Beneficiary.% of Proceeds
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_InterestPercent_BEN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_InterestPercent_BEN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for Delete in page Beneficiary: Beneficiary.Delete
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Delete_repeatingSection_0_0_beneficiary_information_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Total in page Beneficiary: Beneficiary.Total
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_TotalBENPercentage_beneficiary_information_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for Add Contingent Beneficiary in page Beneficiary: Beneficiary.Add Contingent Beneficiary
+17:56:04 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_AddContingentBene | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for CBN Divide Proceed equally in page Beneficiary: Beneficiary.CBN Divide Proceed equally
+17:56:04 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_ContingentBeneEqualProceedCB | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for CBN Add in page Beneficiary: Beneficiary.CBN Add
+17:56:04 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Add_repeatingSection_1 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for CBN Same as in page Beneficiary: Beneficiary.CBN Same as
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_BeneficiarySameAs_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator:
+17:56:04 [ INFO] [main] - Locator for CBN Beneficiary Type in page Beneficiary: Beneficiary.CBN Beneficiary Type
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_BeneficiaryType_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_BeneficiaryType_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Name in page Beneficiary: Beneficiary.CBN Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_EntityName_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_EntityName_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Prefix in page Beneficiary: Beneficiary.CBN Prefix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Prefix_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN First Name in page Beneficiary: Beneficiary.CBN First Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_FirstName_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Middle Name in page Beneficiary: Beneficiary.CBN Middle Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_MiddleName_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Last Name in page Beneficiary: Beneficiary.CBN Last Name
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_LastName_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Suffix in page Beneficiary: Beneficiary.CBN Suffix
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Suffix_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Relationship to Owner in page Beneficiary: Beneficiary.CBN Relationship to Owner
+17:56:04 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_RelToOwner_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_RelToOwner_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Date of Birth in page Beneficiary: Beneficiary.CBN Date of Birth
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_DOB_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_DOB_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Date Trust Created in page Beneficiary: Beneficiary.CBN Date Trust Created
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_TrustDate_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_TrustDate_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Social Security Number in page Beneficiary: Beneficiary.CBN Social Security Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_GovtIDSSN_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtIDSSN_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Tax ID Number in page Beneficiary: Beneficiary.CBN Tax ID Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_GovtIDTID_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtIDTID_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Phone Number in page Beneficiary: Beneficiary.CBN Phone Number
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_PhoneNum_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PhoneNum_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Attention Line in page Beneficiary: Beneficiary.CBN Attention Line
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine1_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine1_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Street Address in page Beneficiary: Beneficiary.CBN Street Address
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine2_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine2_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Line2 in page Beneficiary: Beneficiary.CBN Line2
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine3_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine3_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN Line3 in page Beneficiary: Beneficiary.CBN Line3
+17:56:04 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AddressLine4_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AddressLine4_CBN_0_beneficiary_information_annuities']
+17:56:04 [ INFO] [main] - Locator for CBN City in page Beneficiary: Beneficiary.CBN City
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_City_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_City_CBN_0_beneficiary_information_annuities']
+17:56:05 [ INFO] [main] - Locator for CBN State in page Beneficiary: Beneficiary.CBN State
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_State_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_State_CBN_0_beneficiary_information_annuities']
+17:56:05 [ INFO] [main] - Locator for CBN Zip in page Beneficiary: Beneficiary.CBN Zip
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_ZipCode_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ZipCode_CBN_0_beneficiary_information_annuities']
+17:56:05 [ INFO] [main] - Locator for CBN Contry in page Beneficiary: Beneficiary.CBN Contry
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Country_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Country_CBN_0_beneficiary_information_annuities']
+17:56:05 [ INFO] [main] - Locator for CBN % of Proceeds in page Beneficiary: Beneficiary.CBN % of Proceeds
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_InterestPercent_CBN_0_beneficiary_information_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_InterestPercent_CBN_0_beneficiary_information_annuities']
+17:56:05 [ INFO] [main] - Locator for CBN Delete in page Beneficiary: Beneficiary.CBN Delete
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Delete_repeatingSection_1_0_beneficiary_information_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for CBN Total in page Beneficiary: Beneficiary.CBN Total
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_TotalCBNPercentage_beneficiary_information_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Beneficiary: Beneficiary.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Beneficiary: Beneficiary.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Beneficiary: Beneficiary.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Purchase Payments: Purchase Payments.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Purchase Payments: Purchase Payments.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Purchase Payments: Purchase Payments.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Total single purchase payment amount in page Purchase Payments: Purchase Payments.Total single purchase payment amount
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_Total_Amount_PPAY | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Total_Amount_PPAY_purchase_payments_annuities']
+17:56:05 [ INFO] [main] - Locator for Is there 1035 Exchange in page Purchase Payments: Purchase Payments.Is there 1035 Exchange
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_1035Exchange | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Purchase Payments: Purchase Payments.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Purchase Payments: Purchase Payments.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Purchase Payments: Purchase Payments.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Benefit Riders: Benefit Riders.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Benefit Riders: Benefit Riders.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Benefit Riders: Benefit Riders.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Living Benefits Riders in page Benefit Riders: Benefit Riders.Living Benefits Riders
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_LivingBenefit_Riders | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Death Benefit Riders in page Benefit Riders: Benefit Riders.Death Benefit Riders
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_DeathBenefit_Riders | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Other Riders  in page Benefit Riders: Benefit Riders.Other Riders 
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:id | Locator:OtherRidersLabel_benefit_riders_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Earning Preservation Benefit Rider in page Benefit Riders: Benefit Riders.Earning Preservation Benefit Rider
+17:56:05 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_EPBCB | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Benefit Riders: Benefit Riders.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Benefit Riders: Benefit Riders.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Benefit Riders: Benefit Riders.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Replacements: Replacements.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Replacements: Replacements.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Replacements: Replacements.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Existing life insurance in page Replacements: Replacements.Existing life insurance
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_InforceNAppliedfor_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Replace, discontinue, or change in page Replacements: Replacements.Replace, discontinue, or change
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_ChangeExistingPolicyInd_PINS | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Add in page Replacements: Replacements.Add
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Add_repeatingSection_0 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Insurer/Company Name in page Replacements: Replacements.Insurer/Company Name
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_ReplacementCompany_REP_0_replacements_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ReplacementCompany_REP_0_replacements_annuities']
+17:56:05 [ INFO] [main] - Locator for Amount of Insurance in page Replacements: Replacements.Amount of Insurance
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_InsuranceAmount_REP_0_replacements_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Date of issue in page Replacements: Replacements.Date of issue
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_IssueDate_REP_0_replacements_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Plan Type in page Replacements: Replacements.Plan Type
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_PlanType_REP_0_replacements_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Policy or Contract Number in page Replacements: Replacements.Policy or Contract Number
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_PolNum_REP_0_replacements_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Delete in page Replacements: Replacements.Delete
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Delete_repeatingSection_0_0_replacements_annuities | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Replacements: Replacements.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Replacements: Replacements.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Replacements: Replacements.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Income Payments: Income Payments.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Income Payments: Income Payments.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Income Payments: Income Payments.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Payment Frequency in page Income Payments: Income Payments.Payment Frequency
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_IncomePayment_Freq | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Income Start Date Type in page Income Payments: Income Payments.Income Start Date Type
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_IncomePayment_StartDt_Type | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Income Start Age in page Income Payments: Income Payments.Income Start Age
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_IncomePayment_Start_Age | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Income Start Start Date in page Income Payments: Income Payments.Income Start Start Date
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_IncomePayment_Start_Date | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Based on in page Income Payments: Income Payments.Based on
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_LifeTime_Income_SingleOrJoint | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Lifetime Income in page Income Payments: Income Payments.Lifetime Income
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_LifeTime_IncomeOption | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Year in page Income Payments: Income Payments.Year
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_LifeTime_Income_GuaranteeYear | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Percentage of payments made to survivor in page Income Payments: Income Payments.Percentage of payments made to survivor
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_PaymentPerc_Surviver | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Payment to be reduced in page Income Payments: Income Payments.Payment to be reduced
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Payment_ReductionType | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Increasing Income Option in page Income Payments: Income Payments.Increasing Income Option
+17:56:05 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_Opt_Features_Increase_Opt | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Increasing Income % in page Income Payments: Income Payments.Increasing Income %
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Opt_Features_Increase_Opt_Perc | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Cash Out Option in page Income Payments: Income Payments.Cash Out Option
+17:56:05 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_Opt_Features_Cashout_Opt | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Do not withhold federal tax in page Income Payments: Income Payments.Do not withhold federal tax
+17:56:05 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_FederalTaxCB | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold federal tax based on in page Income Payments: Income Payments.Withhold federal tax based on
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_FedTax_BasedOn | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Marital Status in page Income Payments: Income Payments.Marital Status
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_FederalTax_Marital_Status | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Number of withholding allowances claimed in page Income Payments: Income Payments.Number of withholding allowances claimed
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FederalTax_Allowances_Claim | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold additional federal tax in page Income Payments: Income Payments.Withhold additional federal tax
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_FederalTax_Withhold_Type | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold additional federal tax Amount in page Income Payments: Income Payments.Withhold additional federal tax Amount
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FederalTax_Withhold_Amt | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold additional federal tax Percentage in page Income Payments: Income Payments.Withhold additional federal tax Percentage
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FederalTax_Withhold_Per | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold federal tax in page Income Payments: Income Payments.Withhold federal tax
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_FedTax_Withhold_Other | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold federal tax Amount in page Income Payments: Income Payments.Withhold federal tax Amount
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FedTax_Withhold_OtherAmt | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold federal tax Percentage in page Income Payments: Income Payments.Withhold federal tax Percentage
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_FedTax_Withhold_OtherPercent | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Do not withhold state tax in page Income Payments: Income Payments.Do not withhold state tax
+17:56:05 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_StateTaxCB | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold Withhold state tax in page Income Payments: Income Payments.Withhold Withhold state tax
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_StateTax_Withhold_Type | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold state tax Amount in page Income Payments: Income Payments.Withhold state tax Amount
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_StateTax_Withhold_Amt | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Withhold state tax Percentage in page Income Payments: Income Payments.Withhold state tax Percentage
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_StateTax_Withhold_Per | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Income Payments: Income Payments.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Income Payments: Income Payments.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Income Payments: Income Payments.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Choose one of the available programs in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Choose one of the available programs
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_DCAEDCA_Type | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_DCAEDCA_Type']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for DCA Source Fund in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.DCA Source Fund
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_DCA_From_Fund | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_DCA_From_Fund']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for Periodic DCA transfers from this source fund will be made in the amounts in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Periodic DCA transfers from this source fund will be made in the amounts
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_DCA_Period_Type | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_DCA_Period_Type']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for DCA Amount in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.DCA Amount
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DCA_Amount | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_DCA_Amount']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for DCA Period in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.DCA Period
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_DCA_Period | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_DCA_Period']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for # of months in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.# of months
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_DCA_Period_Other | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_DCA_Period_Other']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for EDCA transfer periods in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.EDCA transfer periods
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_EDCA_Transfer_Period | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_EDCA_Transfer_Period']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for Rebalancing Indicator in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Rebalancing Indicator
+17:56:05 [ INFO] [main] -  | Field_Type:Checkbox | Identifier:name | Locator:a_Rebalancing_Ind_0 | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_Rebalancing_Ind']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for Rebalancing Frequency in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Rebalancing Frequency
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_Rebalancing_Freq | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://*[@name='a_Rebalancing_Freq']/following-sibling::div[@class='validationMsg']/label
+17:56:05 [ INFO] [main] - Locator for Previous in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page DCA EDCA Rebalancing: DCA EDCA Rebalancing.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Allocations: Allocations.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Allocations: Allocations.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Allocations: Allocations.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Fund Group Option in page Allocations: Allocations.Fund Group Option
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_FundGrpOption | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Fund Name in page Allocations: Allocations.Fund Name
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:xpath | Locator://*[@id='FundNameList']//option[@value='+fundId+']/parent::select | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Fund Percent in page Allocations: Allocations.Fund Percent
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:xpath | Locator://*[@id='FundNameList']//option[@value='+fundId+']/parent::select/parent::div/following-sibling::div/input | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Allocations: Allocations.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Allocations: Allocations.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Allocations: Allocations.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Electronic Delivery: Electronic Delivery.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Electronic Delivery: Electronic Delivery.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Electronic Delivery: Electronic Delivery.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for e-Delivery in page Electronic Delivery: Electronic Delivery.e-Delivery
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_EDElected | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Electronic Delivery: Electronic Delivery.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Electronic Delivery: Electronic Delivery.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Electronic Delivery: Electronic Delivery.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Financial Professionals: Financial Professionals.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Financial Professionals: Financial Professionals.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Financial Professionals: Financial Professionals.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Producer Exiting Policy Ind in page Financial Professionals: Financial Professionals.Producer Exiting Policy Ind
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_ExistingInsInd_AGT1 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Producer Replacement Ind in page Financial Professionals: Financial Professionals.Producer Replacement Ind
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_ReplacmentInd_AGT1 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Add in page Financial Professionals: Financial Professionals.Add
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Add_repeatingSection_0 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Prefix in page Financial Professionals: Financial Professionals.Prefix
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Prefix_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Prefix_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for First Name  in page Financial Professionals: Financial Professionals.First Name 
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_FirstName_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_FirstName_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Middle Name in page Financial Professionals: Financial Professionals.Middle Name
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_MiddleName_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_MiddleName_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Last Name  in page Financial Professionals: Financial Professionals.Last Name 
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_LastName_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LastName_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Suffix in page Financial Professionals: Financial Professionals.Suffix
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:id | Locator:a_Suffix_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Suffix_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Social Security Number in page Financial Professionals: Financial Professionals.Social Security Number
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_GovtID_SSN__AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_GovtID_SSN__AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Representative ID in page Financial Professionals: Financial Professionals.Representative ID
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_AgentID_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_AgentID_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Firm Profile Code in page Financial Professionals: Financial Professionals.Firm Profile Code
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_ProfileCode_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ProfileCode_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Business phone in page Financial Professionals: Financial Professionals.Business phone
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_Phone_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_Phone_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for State license I.D. number in page Financial Professionals: Financial Professionals.State license I.D. number
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_LicenseNoFL_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_LicenseNoFL_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Percentage in page Financial Professionals: Financial Professionals.Percentage
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:id | Locator:a_InterestPercent_AGT_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_InterestPercent_AGT_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Delete in page Financial Professionals: Financial Professionals.Delete
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:Delete_repeatingSection_0_0_financial_professionals_annuities | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='Delete_repeatingSection_0_0_financial_professionals_annuities']
+17:56:05 [ INFO] [main] - Locator for Total in page Financial Professionals: Financial Professionals.Total
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_TotalAGTIntPercent | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Client account number in page Financial Professionals: Financial Professionals.Client account number
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_ClientAccNo | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Commission Option in page Financial Professionals: Financial Professionals.Commission Option
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_CompPlan_AGT1 | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Total Commission Retained in page Financial Professionals: Financial Professionals.Total Commission Retained
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_TotalCommRetained | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Financial Professionals: Financial Professionals.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Financial Professionals: Financial Professionals.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Financial Professionals: Financial Professionals.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Summary: Summary.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Server Side Message in page Summary: Summary.Server Side Message
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@id='centerContent']/div[@id='eastDiv']//div[@id='Messages']/ul/li | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Summary: Summary.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Summary: Summary.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save And Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Summary: Summary.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Signature Options: Signature Options.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Signature Options: Signature Options.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Signature Options: Signature Options.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Signature Method in page Signature Options: Signature Options.Signature Method
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_SignatureMethod | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_SignatureMethod_signature_options_annuities']
+17:56:05 [ INFO] [main] - Locator for Has the Proposed Annuitant signed the Application? in page Signature Options: Signature Options.Has the Proposed Annuitant signed the Application?
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_PISignatureOK | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_PISignatureOK']
+17:56:05 [ INFO] [main] - Locator for Has the Joint Annuitant signed the acknowledgement in the application? in page Signature Options: Signature Options.Has the Joint Annuitant signed the acknowledgement in the application?
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_JointAnnSignatureOK | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_JointAnnSignatureOK']
+17:56:05 [ INFO] [main] - Locator for Has the Owner signed the Application? in page Signature Options: Signature Options.Has the Owner signed the Application?
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_OwnerSignatureOK | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_OwnerSignatureOK']
+17:56:05 [ INFO] [main] - Locator for Has the Joint Owner signed the Application? in page Signature Options: Signature Options.Has the Joint Owner signed the Application?
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_JointOwnerSignatureOK | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_JointOwnerSignatureOK']
+17:56:05 [ INFO] [main] - Locator for Has the Representative signed the Application? in page Signature Options: Signature Options.Has the Representative signed the Application?
+17:56:05 [ INFO] [main] -  | Field_Type:RadioOption | Identifier:name | Locator:a_ProducerSignatureOK | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_ProducerSignatureOK']
+17:56:05 [ INFO] [main] - Locator for Signature City in page Signature Options: Signature Options.Signature City
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_SignatureCity | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_SignatureCity_signature_options_annuities']
+17:56:05 [ INFO] [main] - Locator for Signature State in page Signature Options: Signature Options.Signature State
+17:56:05 [ INFO] [main] -  | Field_Type:DDLB | Identifier:name | Locator:a_SignatureState | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_SignatureState_signature_options_annuities']
+17:56:05 [ INFO] [main] - Locator for Signature Date in page Signature Options: Signature Options.Signature Date
+17:56:05 [ INFO] [main] -  | Field_Type:TextBox | Identifier:name | Locator:a_SignatureDate | Client_Side_Message_Identifier:xpath | Client_Side_Message_Locator://div[@class='validationMsg']/label[@for='a_SignatureDate_signature_options_annuities']
+17:56:05 [ INFO] [main] - Locator for Previous in page Signature Options: Signature Options.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save and Exit in page Signature Options: Signature Options.Save and Exit
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://div/input[@value='Save and Exit'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Next in page Signature Options: Signature Options.Next
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Finalize Application: Finalize Application.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Policy Number in page Finalize Application: Finalize Application.Policy Number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:name | Locator:a_PolNumber | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Screen Name in page Finalize Application: Finalize Application.Screen Name
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://div[@class='headerLabel'][2] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Previous in page Finalize Application: Finalize Application.Previous
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__back | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Submit Application in page Finalize Application: Finalize Application.Submit Application
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Submission Page: Submission Page.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Confirmation Message in page Submission Page: Submission Page.Confirmation Message
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:id | Locator:YourapplicationhasbeenQueuedforsubmissionLabel | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save Confirmation Message in page Submission Page: Submission Page.Save Confirmation Message
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:id | Locator:YourpartiallyfilledapplicationhasbeensavedsuccessfullyLabel | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Policy number in page Submission Page: Submission Page.Policy number
+17:56:05 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://label[text()='Policy No:']/following-sibling::span[@name='a_PolNumber'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Close in page Submission Page: Submission Page.Close
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:name | Locator:_eventId__next | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Save Close in page Submission Page: Submission Page.Save Close
+17:56:05 [ INFO] [main] -  | Field_Type:Button | Identifier:id | Locator:closeButton | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page Left Navigation: Left Navigation.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for Getting Started in page Left Navigation: Left Navigation.Getting Started
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_getting_started_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Annuitant in page Left Navigation: Left Navigation.Annuitant
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_annuitant_information_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Owner in page Left Navigation: Left Navigation.Owner
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_owner_information_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Beneficiary in page Left Navigation: Left Navigation.Beneficiary
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_beneficiary_information_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Purchase Payments in page Left Navigation: Left Navigation.Purchase Payments
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_purchase_payments_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Benefit Riders in page Left Navigation: Left Navigation.Benefit Riders
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_benefit_riders_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Replacements in page Left Navigation: Left Navigation.Replacements
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_replacements_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for DCA EDCA Rebalancing in page Left Navigation: Left Navigation.DCA EDCA Rebalancing
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_dca_edca_rebalancing_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Allocations in page Left Navigation: Left Navigation.Allocations
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_allocations_iul'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Income Payments in page Left Navigation: Left Navigation.Income Payments
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_income_payments_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Electronic Delivery in page Left Navigation: Left Navigation.Electronic Delivery
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_electronic_delivery_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Financial Professionals in page Left Navigation: Left Navigation.Financial Professionals
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_financial_professionals_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Summary in page Left Navigation: Left Navigation.Summary
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_SummaryPage_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Signature Options in page Left Navigation: Left Navigation.Signature Options
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_signature_options_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Finalize Application in page Left Navigation: Left Navigation.Finalize Application
+17:56:05 [ INFO] [main] -  | Field_Type:Link | Identifier:xpath | Locator://a[@id='Annuity_finalize_application_annuities'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Name in page SampleSheet: SampleSheet.Field Name
+17:56:05 [ INFO] [main] -  | Field_Type:Field Type | Identifier:Identifier | Locator:Locator | Client_Side_Message_Identifier:Client Side Message Identifier | Client_Side_Message_Locator:Client Side Message Locator
+17:56:05 [ INFO] [main] - Locator for DefaultField in page SampleSheet: SampleSheet.DefaultField
+17:56:05 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Field Type in page ListValues: ListValues.Field Type
+17:56:05 [ INFO] [main] -  | Field_Type:Identifier | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for TextBox in page ListValues: ListValues.TextBox
+17:56:05 [ INFO] [main] -  | Field_Type:name | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for DDLB in page ListValues: ListValues.DDLB
+17:56:05 [ INFO] [main] -  | Field_Type:id | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for RadioOption in page ListValues: ListValues.RadioOption
+17:56:05 [ INFO] [main] -  | Field_Type:xpath | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Button in page ListValues: ListValues.Button
+17:56:05 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Checkbox in page ListValues: ListValues.Checkbox
+17:56:05 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Label in page ListValues: ListValues.Label
+17:56:05 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - Locator for Link in page ListValues: ListValues.Link
+17:56:05 [ INFO] [main] -  | Field_Type: | Identifier: | Locator: | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:05 [ INFO] [main] - 'allLocators' map Populated with all values from Page Identifier Excel
+17:56:05 [ INFO] [main] - Initializing Browser for Automation
+17:56:14 [ INFO] [main] - Launch Console Page Title: 
+17:56:16 [ INFO] [main] - Launch Console displayed..
+17:56:16 [ INFO] [main] - Login Page is opened automatically. Changing drive to Login Console
+17:56:16 [ INFO] [main] - -----Open Windows Titles-----
+17:56:16 [ INFO] [main] - 
+17:56:17 [ INFO] [main] - Accelerator Console - Agent
+17:56:17 [ INFO] [main] - Driver changed to Login Console
+17:56:17 [ INFO] [main] - Login Console Page Title: Accelerator Console - Agent
+17:56:23 [ INFO] [main] - Agent Console Page displayed.
+17:56:23 [ INFO] [main] - Browser Initialization Successfull
+17:56:23 [ INFO] [main] - Test Cases Information:
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#1 | TestDataSheet:FRA | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#2 | TestDataSheet:FRA | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#3 | TestDataSheet:IA | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#4 | TestDataSheet:IA | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#5 | TestDataSheet:Sample | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#6 | TestDataSheet:GIB | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#7 | TestDataSheet:GIB | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#8 | TestDataSheet:VA | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#9 | TestDataSheet:VA | Executable:No
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#10 | TestDataSheet:All | Executable:Yes
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#11 | TestDataSheet:All | Executable:Yes
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#12 | TestDataSheet:All | Executable:Yes
+17:56:23 [ INFO] [main] -  | TestCaseId:TC#13 | TestDataSheet:All | Executable:Yes
+17:56:23 [ INFO] [main] - Total no of case: 13
+17:56:24 [ INFO] [main] - Initialization Report
+17:56:24 [ INFO] [main] - Report Initialization Successfull
+17:56:24 [ INFO] [main] - Initializing Screenshot path
+17:56:24 [ INFO] [main] - Screenshot Initialization Successfull
+17:56:24 [ INFO] [main] - TC#1 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#2 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#3 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#4 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#5 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#6 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#7 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#8 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - TC#9 is marked as No. Skipping this case.
+17:56:24 [ INFO] [main] - Starting Test Case TC#10
+17:56:24 [ INFO] [main] - Test Case Data
+17:56:24 [ INFO] [main] -  | ScreenName:Agent Console | FieldName:Submitted | Step:Click | Data:
+17:56:25 [ INFO] [main] - Went to FreshCase
+17:56:25 [ INFO] [main] - Identifier for Submitted in Page Agent Console
+17:56:25 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='submitted']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:29 [ INFO] [main] - Test Case Data
+17:56:29 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:, Acknowledged
+17:56:29 [ INFO] [main] - Identifier for Status in Page Submitted
+17:56:29 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='+PolicyNumber+']/following-sibling::td[@aria-describedby='submittedIndexGrid_status'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:30 [ INFO] [main] - Test Case Data
+17:56:30 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:END
+17:56:30 [ INFO] [main] - Terminating execution for Test Case TC#10 as error count exceed given count
+17:56:30 [ INFO] [main] - Execution Completed for Test Case TC#10
+17:56:30 [ INFO] [main] - Starting Test Case TC#11
+17:56:31 [ INFO] [main] - Test Case Data
+17:56:31 [ INFO] [main] -  | ScreenName:Agent Console | FieldName:Submitted | Step:Click | Data:
+17:56:31 [ INFO] [main] - Went to FreshCase
+17:56:31 [ INFO] [main] - Identifier for Submitted in Page Agent Console
+17:56:31 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='submitted']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:33 [ INFO] [main] - Test Case Data
+17:56:33 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:, Acknowledged
+17:56:33 [ INFO] [main] - Identifier for Status in Page Submitted
+17:56:33 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='+PolicyNumber+']/following-sibling::td[@aria-describedby='submittedIndexGrid_status'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:34 [ INFO] [main] - Test Case Data
+17:56:34 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:END
+17:56:34 [ INFO] [main] - Terminating execution for Test Case TC#11 as error count exceed given count
+17:56:34 [ INFO] [main] - Execution Completed for Test Case TC#11
+17:56:35 [ INFO] [main] - Starting Test Case TC#12
+17:56:35 [ INFO] [main] - Test Case Data
+17:56:35 [ INFO] [main] -  | ScreenName:Agent Console | FieldName:Submitted | Step:Click | Data:
+17:56:35 [ INFO] [main] - Went to FreshCase
+17:56:35 [ INFO] [main] - Identifier for Submitted in Page Agent Console
+17:56:35 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='submitted']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:37 [ INFO] [main] - Test Case Data
+17:56:37 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:, Acknowledged
+17:56:37 [ INFO] [main] - Identifier for Status in Page Submitted
+17:56:37 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='+PolicyNumber+']/following-sibling::td[@aria-describedby='submittedIndexGrid_status'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:38 [ INFO] [main] - Test Case Data
+17:56:38 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:END
+17:56:38 [ INFO] [main] - Terminating execution for Test Case TC#12 as error count exceed given count
+17:56:38 [ INFO] [main] - Execution Completed for Test Case TC#12
+17:56:39 [ INFO] [main] - Starting Test Case TC#13
+17:56:39 [ INFO] [main] - Test Case Data
+17:56:39 [ INFO] [main] -  | ScreenName:Agent Console | FieldName:Submitted | Step:Click | Data:
+17:56:39 [ INFO] [main] - Went to FreshCase
+17:56:39 [ INFO] [main] - Identifier for Submitted in Page Agent Console
+17:56:39 [ INFO] [main] -  | Field_Type:Button | Identifier:xpath | Locator://li[@class='submitted']/a | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:41 [ INFO] [main] - Test Case Data
+17:56:41 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:, Acknowledged
+17:56:41 [ INFO] [main] - Identifier for Status in Page Submitted
+17:56:41 [ INFO] [main] -  | Field_Type:Label | Identifier:xpath | Locator://td[@aria-describedby='submittedIndexGrid_policyNumber' and text()='+PolicyNumber+']/following-sibling::td[@aria-describedby='submittedIndexGrid_status'] | Client_Side_Message_Identifier: | Client_Side_Message_Locator:
+17:56:43 [ INFO] [main] - Test Case Data
+17:56:43 [ INFO] [main] -  | ScreenName:Submitted | FieldName:Status | Step:VerifyPolicyStatus | Data:END
+17:56:43 [ INFO] [main] - Terminating execution for Test Case TC#13 as error count exceed given count
+17:56:43 [ INFO] [main] - Execution Completed for Test Case TC#13
+17:56:43 [ INFO] [main] - Report publishing completed
+17:56:43 [ INFO] [main] - Report Building Completed
+17:56:43 [ INFO] [main] - Performing Logout
+17:56:43 [ INFO] [main] - Went to logout java
+17:56:44 [ INFO] [main] - Logout is clicked
+17:56:45 [ INFO] [main] - Logout Successfull
+17:56:45 [ INFO] [main] - Sending e-mail of automation result....
+17:56:45 [ INFO] [main] - Preparing e-mail send procedure
+17:56:45 [ INFO] [main] - To address: ssahoo43@dxc.com
+17:56:45 [ INFO] [main] - From address: ssahoo43@dxc.com
+17:56:45 [ INFO] [main] - Subject Line: Automation Test Result
+17:56:45 [ INFO] [main] - Email Content 
+<h3>Automation Test Result</h3>
+<table style='height: 85px; border-color: black;' width='300'>
+<tbody>
+<tr bgcolor='black'>
+<td style='width: 87.2px;'><span style='color: #ffffff;'>Test Case Id</span></td>
+<td style='width: 88.8px;'><span style='color: #ffffff;'>Status</span></td>
+</tr>
+<tr><tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#1</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#2</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#3</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#4</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#5</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#6</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#7</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#8</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='8AAAFC'>
+<td style='width: 160px;'>TC#9</td>
+<td style='width: 235px;'>SKIPPED</td>
+</tr>
+<tr bgcolor='FC7A7A'>
+<td style='width: 160px;'>TC#10</td>
+<td style='width: 235px;'>FAIL</td>
+</tr>
+<tr bgcolor='FC7A7A'>
+<td style='width: 160px;'>TC#11</td>
+<td style='width: 235px;'>FAIL</td>
+</tr>
+<tr bgcolor='FC7A7A'>
+<td style='width: 160px;'>TC#12</td>
+<td style='width: 235px;'>FAIL</td>
+</tr>
+<tr bgcolor='FC7A7A'>
+<td style='width: 160px;'>TC#13</td>
+<td style='width: 235px;'>FAIL</td>
+</tr>
+</tbody>
+</table>
+<br>Thanks,<br>BHF eApp Automation
+17:56:45 [ INFO] [main] - Message composed; ready to send
+17:57:07 [ERROR] [main] - Error in sending e-mail notification Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1
+17:57:07 [ERROR] [main] - Detail exception: 
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1;
+  nested exception is:
+	java.net.ConnectException: Connection timed out: connect
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2209)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740)
+	at javax.mail.Service.connect(Service.java:388)
+	at javax.mail.Service.connect(Service.java:246)
+	at javax.mail.Service.connect(Service.java:195)
+	at javax.mail.Transport.send0(Transport.java:254)
+	at javax.mail.Transport.send(Transport.java:124)
+	at bhfUtility.SendEmail.send(SendEmail.java:119)
+	at eAppBHFAutomation.AutomationDriver.main(AutomationDriver.java:223)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:353)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:239)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2175)
+	... 8 more
+17:57:07 [ERROR] [main] - E-mail sent - unsuccessfull
