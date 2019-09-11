@@ -1,11 +1,16 @@
 package eAppBHFAutomation;
 
 import bhfUtility.Log;
+import bhfUtility.SendEmail;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Properties;
+
+import javax.mail.MessagingException;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,9 +36,11 @@ public class AutomationDriver {
 	private static String agent_PWD; //= "vilink"; //Password
 	private static String browser_type; //Chrome or IE
 	private static int no_failed_steps_skip_case; //2; Case execution will terminate if no of steps are failed > given no.
+	private static String send_Email_Notification; //E-mail Notification Indicator
 	static int ColumnNo;
 	static boolean loginSuccessfull;
 	static HashMap<String, String> testData = new LinkedHashMap<String, String>();
+	static HashMap<String, String> testResult = new LinkedHashMap<String, String>();
 	static HashMap<String, Integer> totalRows = new LinkedHashMap<String, Integer>();
 	static HashMap<String, LinkedHashMap<String, String>> allLocators = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 	static HashMap<Integer, LinkedHashMap<String, String>> testSuite = new LinkedHashMap<Integer, LinkedHashMap<String, String>>();
@@ -56,13 +63,15 @@ public class AutomationDriver {
 		FieldIdentifier_Loc = System.getProperty("user.dir")+"\\"+ p.getProperty("FieldIdentifier_Filename");
 		Report_Path = System.getProperty("user.dir")+"\\"+ p.getProperty("Report_Path");
 		Screenshot_Path = System.getProperty("user.dir")+"\\"+ p.getProperty("Screenshot_Path");
-		Driver_Path = p.getProperty("Driver_Path");
+		Driver_Path = System.getProperty("user.dir")+"\\" + p.getProperty("Driver_Path");
 		browser_type = p.getProperty("Browser");
 		eApp_URL = p.getProperty("URL");
 		agent_ID = p.getProperty("agent_ID");
 		agent_PWD = p.getProperty("agent_PWD");
 		TimeOutSeconds = Integer.parseInt(p.getProperty("time_out_Second"));
 		no_failed_steps_skip_case = Integer.parseInt(p.getProperty("no_failed_steps_to_skip_case"));
+		send_Email_Notification = p.getProperty("send_email_notofication");
+		
 		//Property File Reading Ends
 
 		//Checking Test Data File is already open or not. If not terminate the execution.
@@ -179,11 +188,20 @@ public class AutomationDriver {
 					} while ((continuestep) && (startRowOfTestCase <= totalnoofrows) );
 					//System.out.println("Execution Completed for Test Case " + testCaseId );
 					Log.info("Execution Completed for Test Case " + testCaseId);
+					if (!(error_count_current_case > 0)) {
+					testResult.put(testCaseId,"PASS");}
+					else {
+						testResult.put(testCaseId,"FAIL");	
+					}
 				}
 				else {
 					//System.out.println("Could not execute Test Case " + testCaseId + ". Test Data not found.");
 					Log.info("Could not execute Test Case " + testCaseId + ". Test Data not found.");
+					testResult.put(testCaseId,"DATA NOT FOUND");	
 				}
+			}else {
+				Log.info(testCaseId + " is marked as " + testCaseExecutable + ". Skipping this case." );
+				testResult.put(testCaseId,"SKIPPED");
 			}
 		}
 
@@ -196,11 +214,28 @@ public class AutomationDriver {
 			Log.info("Performing Logout");
 			FunctionLibrary.logout();
 			Log.info("Logout Successfull");
+			
 		}
 		catch (Exception e){
 			Log.error("Logout Unsuccessfull " + e.getMessage());
 			Log.error(e);
 			return;}
+		
+		//Send e-mail notification
+		if (send_Email_Notification.equalsIgnoreCase("YES")) {
+		try {
+			Log.info("Sending e-mail of automation result....");
+			SendEmail.send("ssahoo43@dxc.com", "ssahoo43@dxc.com", "Automation Test Result", testResult);
+			Log.info("E-mail sent successfully");
+		} catch (MessagingException e) {
+			Log.error("Error in sending e-mail notification " + e.getMessage());
+			Log.error(e);
+			Log.error("E-mail sent - unsuccessfull");
+		}	
+		}
+		
+		date = new Date();  
+		Log.info("Automation Execution Completed: " + formatter.format(date));
 	}
 	
 	public static void login() {
