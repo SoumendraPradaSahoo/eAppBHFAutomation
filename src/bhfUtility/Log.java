@@ -67,6 +67,7 @@ public class Log {
 		}
 
 	private static void init() {
+		System.setProperty("log_path", System.getProperty("user.dir") + "/logs");
 		PropertyConfigurator.configure(System.getProperty("user.dir")+"/"+ "Object/log4j.properties");
 	}
 }
