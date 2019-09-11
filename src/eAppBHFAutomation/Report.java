@@ -59,7 +59,7 @@ public class Report {
 		if (reportPath.equals(""))
 		test.log(Status.PASS, message);
 		else
-		test.log(Status.PASS, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());	
+		test.log(Status.PASS, message, MediaEntityBuilder.createScreenCaptureFromPath(reportPath).build());	
 	}
 	
 	public static void PutFail(String message) throws IOException {
@@ -68,7 +68,7 @@ public class Report {
 		if (reportPath.equals(""))
 		test.log(Status.FAIL, message);
 		else
-		test.log(Status.FAIL, message, MediaEntityBuilder.createScreenCaptureFromPath(FunctionLibrary.captureScreen()).build());
+		test.log(Status.FAIL, message, MediaEntityBuilder.createScreenCaptureFromPath(reportPath).build());
 	}
 	public static void PutFailWithoutScreenShot(String message) throws IOException {
 		FunctionLibrary.error_count++;
